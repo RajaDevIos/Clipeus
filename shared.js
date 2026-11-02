@@ -98,8 +98,13 @@ const CV_TRADE = {
     const drawer = document.getElementById('rfq-drawer');
     if (backdrop && drawer) {
       backdrop.classList.remove('hidden');
-      setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
-      drawer.classList.remove('translate-x-full');
+      requestAnimationFrame(() => {
+        backdrop.classList.remove('opacity-0');
+        backdrop.classList.add('backdrop-open');
+        drawer.classList.remove('translate-x-full', 'invisible');
+        drawer.classList.add('drawer-open', 'visible');
+      });
+      document.body.style.overflow = 'hidden';
     }
     CV_TRADE.renderDocketUI();
   },
@@ -109,8 +114,14 @@ const CV_TRADE = {
     const drawer = document.getElementById('rfq-drawer');
     if (backdrop && drawer) {
       backdrop.classList.add('opacity-0');
+      backdrop.classList.remove('backdrop-open');
       drawer.classList.add('translate-x-full');
-      setTimeout(() => backdrop.classList.add('hidden'), 300);
+      drawer.classList.remove('drawer-open', 'visible');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        backdrop.classList.add('hidden');
+        drawer.classList.add('invisible');
+      }, 320);
     }
   },
 
