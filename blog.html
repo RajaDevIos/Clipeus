@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Clipeus Virtutis" />
+  <meta name="application-name" content="Clipeus Virtutis B2B Trade Portal" />
+  <title>Trade Insights &amp; Market Intelligence | Clipeus Virtutis®</title>
+  <meta name="description" content="Read industry insights, supply chain optimization whitepapers, and international trade compliance dossiers by Clipeus Virtutis®." />
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css?v=3.6" />
+
+  <!-- Local Tailwind Engine -->
+  <script src="assets/tailwindcss.js"></script>
+  <script>
+    if (typeof tailwind === 'undefined') {
+      document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#0D4225',
+              dark: '#082B18',
+              light: '#1B5E38',
+              surface: '#F4F7F4',
+            },
+            bronze: {
+              DEFAULT: '#976336',
+              dark: '#74412A',
+              terracotta: '#A5775F',
+              clay: '#C4A49C',
+              blush: '#F2BDBA',
+              subtle: '#FAF6F2',
+            },
+            stone: {
+              950: '#121212',
+              900: '#1C1917',
+              800: '#292524',
+              700: '#44403C',
+              600: '#57534E',
+              500: '#78716C',
+              400: '#A8A29E',
+              200: '#E7E5E4',
+              100: '#F5F5F4',
+              50: '#FAFAF9',
+            }
+          },
+          maxWidth: {
+            content: '1440px',
+          },
+          boxShadow: {
+            'portfolio': '0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.05)',
+            'portfolio-hover': '0 30px 60px -15px rgba(13, 66, 37, 0.12), 0 0 1px 1px rgba(13, 66, 37, 0.1)',
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#F8F8F7] text-stone-900 font-sans antialiased selection:bg-brand selection:text-white relative" role="application">
+
+  <!-- ================= TOP TICKER RIBBON ================= -->
+  <div class="bg-[#0b0e0c] text-emerald-400 border-b border-emerald-950/60 py-2.5 overflow-hidden select-none font-mono text-[11px] relative shadow-inner z-40">
+    <div class="animate-marquee flex items-center">
+      <div class="flex items-center gap-8 pr-8">
+        <span class="inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-stone-400 font-sans uppercase tracking-wider text-[10px] font-semibold">PORT OF CHENNAI:</span>
+          <strong class="text-white">BERTH CLEAR · INCOTERMS 2020 DISPATCH ACTIVE</strong>
+        </span>
+        <span class="text-stone-700">|</span>
+        <span class="inline-flex items-center gap-2">
+          <span class="text-amber-400">⚡</span>
+          <span class="text-stone-400 font-sans uppercase tracking-wider text-[10px] font-semibold">EXPORT CORRIDORS:</span>
+          <strong class="text-stone-200">FOB CHENNAI → ROTTERDAM / JEBEL ALI / SINGAPORE / HAMBURG</strong>
+        </span>
+        <span class="text-stone-700">|</span>
+        <span class="inline-flex items-center gap-2">
+          <span class="text-emerald-400">🛡️</span>
+          <span class="text-stone-400 font-sans uppercase tracking-wider text-[10px] font-semibold">TRADE INTELLIGENCE:</span>
+          <strong class="text-emerald-300">QUARTERLY POLICY &amp; CBAM COMPLIANCE DOSSIERS</strong>
+        </span>
+      </div>
+    </div>
+  </div>
+  </header>
+
+    <!-- ================= MASTER HEADER (LUMÓRA FLOATING DOCK NAVIGATION) ================= -->
+  <header class="sticky top-0 z-40 bg-[#F8F8F7]/80 backdrop-blur-md border-b border-stone-200/80 transition-all relative">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+      
+      <!-- Brand Logo (Lumóra Style Grotesque Typography) -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group min-w-0 flex-shrink">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand text-white p-1 flex items-center justify-center shadow-sm overflow-hidden group-hover:scale-105 transition-transform flex-shrink-0">
+          <img src="logo.png" alt="Clipeus Virtutis Emblem" class="w-full h-full object-contain filter drop-shadow" onerror="this.src='assets/logo-icon-DYH3E1lo.png'"/>
+        </div>
+        <div class="flex items-baseline min-w-0">
+          <span class="font-sans font-bold text-lg sm:text-2xl tracking-tighter text-stone-950 truncate">
+            Clipeus Virtutis<sup class="text-[10px] sm:text-xs font-semibold ml-0.5">®</sup>
+          </span>
+        </div>
+      </a>
+
+      <!-- Floating Pill Navigation Dock with Dropdowns (Kronix Tech + Lumóra Signature Style) -->
+      <nav class="hidden lg:flex items-center px-6 py-2 rounded-full nav-pill-dock text-xs font-medium text-stone-600 gap-3">
+        <a href="index.html" class="hover:text-stone-950 transition-colors">Home</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="products.html" class="hover:text-stone-950 transition-colors">Products</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="about.html" class="hover:text-stone-950 transition-colors">About</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="solutions.html" class="hover:text-stone-950 transition-colors">Solutions</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="services.html" class="hover:text-stone-950 transition-colors">Services</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="partners.html" class="hover:text-stone-950 transition-colors">Partners</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="blog.html" class="text-stone-950 font-bold dock-active">Blog</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="contact.html" class="hover:text-stone-950 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        
+        <!-- Floating RFQ Docket Button (Single-line Compact on Mobile) -->
+        <button onclick="CV_TRADE.openDrawer()" class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white hover:bg-stone-50 text-stone-900 text-xs font-semibold border border-stone-200 shadow-sm transition-all flex-shrink-0 cursor-pointer" title="Open RFQ Docket">
+          <svg class="w-4 h-4 text-brand flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span class="hidden sm:inline whitespace-nowrap">RFQ Docket</span>
+          <span class="sm:hidden font-mono text-[11px] font-bold">RFQ</span>
+          <span class="cv-docket-count w-5 h-5 rounded-full bg-brand text-white flex items-center justify-center text-[10px] font-bold font-mono flex-shrink-0">0</span>
+        </button>
+
+        <!-- Request Quote Pill (Hidden on Mobile) -->
+        <button onclick="CV_TRADE.openDrawer()" class="hidden md:flex px-5 py-2.5 rounded-full bg-stone-950 hover:bg-black text-white text-xs font-semibold shadow-sm transition-all items-center gap-1.5 flex-shrink-0 cursor-pointer">
+          <span>Request Quote</span>
+          <span class="text-stone-400 font-normal">→</span>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" onclick="CV_TRADE.toggleMobileNav(event)" class="lg:hidden p-2 sm:p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 transition-all flex items-center justify-center flex-shrink-0 cursor-pointer" aria-label="Toggle navigation" aria-expanded="false">
+          <svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+
+      </div>
+
+    </div>
+
+              <!-- ========================================================
+       KRONIX TECH STYLE FLOATING MOBILE DRAWER & DROPDOWN
+       ======================================================== -->
+      <!-- Full-Screen Blur Backdrop Overlay -->
+  <div id="mobile-nav-backdrop" onclick="CV_TRADE.closeMobileNav()"></div>
+
+  <!-- Floating 24px Pill-Card Drawer -->
+  <div id="mobile-nav-menu" class="bg-white" style="background-color: #ffffff !important;" role="dialog" aria-label="Mobile Navigation">
+    
+    <!-- Top Row: Navigation Tag & Close Button -->
+    <div class="flex items-center justify-between pb-3 mb-4 border-b border-stone-200/80">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-[11px] font-mono font-bold tracking-widest text-stone-400 uppercase">
+          NAVIGATION
+        </span>
+      </div>
+      <button onclick="CV_TRADE.closeMobileNav()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center transition-all cursor-pointer" aria-label="Close menu">
+        <svg class="w-4 h-4" width="16" height="16" style="width: 16px; height: 16px; min-width: 16px; min-height: 16px; display: block;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links (Clean Direct Links - Exact Kronix Tech Style) -->
+    <nav class="flex flex-col gap-1">
+      <a href="index.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Home</span>
+        
+      </a>
+
+      <a href="products.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Products Catalog</span>
+        
+      </a>
+
+      <a href="about.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>About Us</span>
+        
+      </a>
+
+      <a href="solutions.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Trade Solutions</span>
+        
+      </a>
+
+      <a href="services.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Sourcing Services</span>
+        
+      </a>
+
+      <a href="partners.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Global Partners</span>
+        
+      </a>
+
+      <a href="blog.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base active font-semibold text-stone-950 bg-stone-100 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Trade Insights</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
+      </a>
+
+      <a href="contact.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Contact HQ</span>
+        
+      </a>
+    </nav>
+
+    <!-- Bottom Action CTAs (Kronix Tech Style) -->
+    <div class="pt-5 mt-4 border-t border-stone-200/80 flex flex-col gap-2.5">
+      <button onclick="CV_TRADE.openDrawer(); CV_TRADE.closeMobileNav();" class="w-full py-3 px-4 rounded-xl bg-brand hover:bg-emerald-950 text-white text-xs font-semibold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+        <span>Open RFQ Inquiry Docket</span>
+        <span class="cv-docket-count px-2 py-0.5 rounded-full bg-emerald-600 text-[10px] font-mono">0</span>
+      </button>
+
+      <a href="contact.html" onclick="CV_TRADE.closeMobileNav()" class="w-full py-2.5 px-4 rounded-xl border border-stone-200 hover:border-stone-300 bg-stone-50 text-stone-800 text-xs font-medium transition-all text-center block">
+        Contact Trade Desk · +91 7299249907
+      </a>
+
+      <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 pt-1">
+        <span class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Direct Port Clearance Active
+        </span>
+        <a href="https://kronixtech.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-stone-500 hover:text-emerald-700 font-sans font-medium transition-colors">
+          <span>Powered by</span>
+          <strong class="text-stone-900 font-bold hover:text-emerald-700">Kronixtech</strong>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= MAIN VIEWPORT (TURBO PAGE ENGINE) ================= -->
+  <main id="main-content" class="cv-page-content">
+
+
+  <!-- ================= HERO SECTION (LUMÓRA DESIGN CONCEPT) ================= -->
+  <section class="pt-8 pb-12 sm:pt-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-content mx-auto">
+    
+    <!-- Top Editorial Header & Metadata -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-12">
+      <div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-stone-950 tracking-tight leading-tight">
+          Trade Insights<sup class="text-2xl sm:text-3xl text-stone-400 font-sans font-normal ml-2">®</sup>
+        </h1>
+        <p class="text-xs sm:text-sm text-stone-500 font-mono mt-2 tracking-wide">
+          RESEARCH DOSSIERS · GLOBAL MACRO POLICY · SUPPLY CHAIN LOGISTICS
+        </p>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-stone-600">
+        <!-- Avatar Stack -->
+        <div class="flex items-center">
+          <div class="flex -space-x-2">
+            <img class="w-8 h-8 rounded-full border-2 border-[#F8F8F7] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Analyst" />
+            <img class="w-8 h-8 rounded-full border-2 border-[#F8F8F7] object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Lead Researcher" />
+            <img class="w-8 h-8 rounded-full border-2 border-[#F8F8F7] object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Trade Specialist" />
+          </div>
+        </div>
+        <div class="border-l border-stone-300 pl-4 font-mono text-[11px] text-stone-500">
+          [ BUILT TO ENDURE · EST. 2024 ]
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Sub-Manifesto -->
+    <div class="max-w-2xl mb-8">
+      <p class="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+        We produce authoritative trade dossiers, supply chain risk assessments, and carbon-border adjustment analyses designed for enterprise procurement officers and international trade houses.
+      </p>
+    </div>
+
+    <!-- Rounded 36px Visual Stage -->
+    <div class="rounded-[36px] overflow-hidden border border-stone-200/80 relative shadow-[0_20px_50px_rgba(0,0,0,0.08)] bg-stone-900 h-[380px] sm:h-[480px]">
+      <img src="https://images.unsplash.com/photo-1573757056004-065ad36e2cf4?auto=format&fit=crop&w=1600&q=80" alt="Global Trade Intelligence Hub" class="w-full h-full object-cover opacity-60" />
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+
+      <!-- Scrim Overlay Header -->
+      <div class="absolute top-6 left-6 right-6 flex items-center justify-between text-white text-xs">
+        <div class="flex items-center gap-2 bg-stone-950/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-stone-800">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-mono text-[11px] tracking-wide">POLICY MEMO: EU CBAM &amp; ISO 17025 LAB HARMONIZATION</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-2 text-stone-400 font-mono text-[11px]">
+          <span>EDITION 2026.02</span>
+          <span>·</span>
+          <span>Q1 FORECAST</span>
+        </div>
+      </div>
+
+      <!-- Corner Specimen Floating Card -->
+      <div class="absolute bottom-6 right-6 max-w-sm hidden sm:block">
+        <div class="rounded-2xl p-4 bg-white/95 backdrop-blur-md border border-stone-200/80 shadow-2xl flex items-center justify-between gap-4">
+          <div>
+            <div class="text-[10px] font-mono text-brand font-bold uppercase tracking-wider">FEATURED DOSSIER</div>
+            <div class="font-serif font-bold text-sm text-stone-900 mt-0.5">The 2026 Cross-Border Sourcing Report</div>
+            <div class="text-[11px] text-stone-500 font-mono mt-0.5">By Research Desk · 5 min read</div>
+          </div>
+          <button onclick="openArticleModal('1')" class="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center hover:bg-brand transition-colors flex-shrink-0">
+            <span>↗</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Stage Bottom Left Caption -->
+      <div class="absolute bottom-6 left-6 max-w-md text-white">
+        <div class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">CLIPEUS VIRTUTIS INTELLIGENCE</div>
+        <h2 class="font-serif text-xl sm:text-2xl font-bold text-white leading-snug">
+          Navigating Tariff Volatility, Decarbonized Freight, and Circular Material Standards
+        </h2>
+      </div>
+    </div>
+
+    <!-- Partner Trust Bar -->
+    <div class="mt-8 pt-6 border-t border-stone-200/60 flex flex-wrap items-center justify-between gap-6 text-stone-400 text-xs font-mono">
+      <div class="flex items-center gap-2">
+        <span class="text-stone-900 font-bold font-sans">TESTING NEXUS:</span>
+        <span>Independent NABL ISO/IEC 17025 Accredited Laboratories</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span>ISO 17025:2017</span>
+        <span>·</span>
+        <span>INCOTERMS 2020</span>
+        <span>·</span>
+        <span>TRL-7 VALIDATION</span>
+        <span>·</span>
+        <span>EU CBAM COMPLIANT</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION [ 01 ]: MARKET INTELLIGENCE & WHITEPAPERS BENTO GRID ================= -->
+  <section class="py-14 bg-white border-t border-b border-stone-200/80">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Tag & Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-[11px] font-mono tracking-widest text-stone-400 uppercase">[ 01 ] RESEARCH ARCHIVE</span>
+          <h2 class="text-2xl sm:text-4xl font-serif text-stone-950 mt-1">Market Intelligence &amp; Whitepapers</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-500 max-w-md leading-relaxed">
+          Peer-reviewed articles, shipping lane diagnostics, and green chemistry commercialization whitepapers written by senior trade specialists.
+        </p>
+      </div>
+
+      <!-- Articles Bento Grid with 3D Tilt -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-posts-container">
+        <!-- Rendered by JS below -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION [ 02 ]: STEPPED RESEARCH METHODOLOGY ================= -->
+  <section class="py-16 bg-[#F8F8F7] border-b border-stone-200/80">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-[11px] font-mono tracking-widest text-stone-400 uppercase">[ 02 ] METHODOLOGY</span>
+          <h2 class="text-2xl sm:text-4xl font-serif text-stone-950 mt-1">Our Research Moves Like Science.</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-500 max-w-md leading-relaxed">
+          Every whitepaper stems from hands-on laboratory verification, audited container manifests, and direct regulatory filings.
+        </p>
+      </div>
+
+      <!-- 4 Stepped Cards with Descending Fills -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Step 1 -->
+        <div class="rounded-3xl p-6 bg-white border border-stone-200/80 flex flex-col justify-between h-72 shadow-sm hover:shadow-md transition-all">
+          <div class="stepped-box-wrap">
+            <div class="stepped-fill-1"></div>
+          </div>
+          <div>
+            <div class="text-[10px] font-mono text-stone-400 uppercase tracking-widest mb-1">01 / DISCOVERY</div>
+            <h3 class="font-serif font-bold text-base text-stone-950 mb-1">Laboratory Sampling</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Direct physical testing at NABL ISO/IEC 17025 accredited research facilities for moisture, ash, and tensile strength.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="rounded-3xl p-6 bg-white border border-stone-200/80 flex flex-col justify-between h-72 shadow-sm hover:shadow-md transition-all">
+          <div class="stepped-box-wrap">
+            <div class="stepped-fill-2"></div>
+          </div>
+          <div>
+            <div class="text-[10px] font-mono text-stone-400 uppercase tracking-widest mb-1">02 / REGULATORY</div>
+            <h3 class="font-serif font-bold text-base text-stone-950 mb-1">Cross-Border Mapping</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              HS code tariff classification, Incoterms 2020 risk boundary analysis, and phytosanitary verification across corridors.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="rounded-3xl p-6 bg-white border border-stone-200/80 flex flex-col justify-between h-72 shadow-sm hover:shadow-md transition-all">
+          <div class="stepped-box-wrap">
+            <div class="stepped-fill-3"></div>
+          </div>
+          <div>
+            <div class="text-[10px] font-mono text-stone-400 uppercase tracking-widest mb-1">03 / STRESS TESTING</div>
+            <h3 class="font-serif font-bold text-base text-stone-950 mb-1">Supply Chain Audits</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Evaluating ocean container payload saturation, moisture-barrier packaging, and port dwell time mitigations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="rounded-3xl p-6 bg-white border border-stone-200/80 flex flex-col justify-between h-72 shadow-sm hover:shadow-md transition-all">
+          <div class="stepped-box-wrap">
+            <div class="stepped-fill-4"></div>
+          </div>
+          <div>
+            <div class="text-[10px] font-mono text-stone-400 uppercase tracking-widest mb-1">04 / DISPATCH</div>
+            <h3 class="font-serif font-bold text-base text-stone-950 mb-1">Public Dossiers</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Open distribution of actionable B2B intelligence, helping enterprise buyers procure sustainable commodities with zero guesswork.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION [ 03 ]: NEWSLETTER BENTO BOX ================= -->
+  <section class="py-16 bg-white border-b border-stone-200/80">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="rounded-[32px] bg-stone-950 text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-brand/20 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-2xl relative z-10">
+          <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-semibold">[ QUARTERLY BRIEFING ]</span>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4 leading-tight">
+            Stay Ahead of Global Trade &amp; Tariff Shifts
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-8">
+            Receive our quarterly trade reports, ocean freight spot benchmarks, and green chemistry innovation updates directly in your procurement inbox.
+          </p>
+
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Clipeus Virtutis Quarterly Trade Reports.');" class="flex flex-col sm:flex-row gap-3 max-w-md">
+            <input type="email" required placeholder="corporate.procurement@company.com" class="flex-1 px-4 py-3.5 rounded-full border border-stone-800 text-xs text-white bg-stone-900/90 placeholder-stone-500 focus:outline-none focus:border-emerald-400" />
+            <button type="submit" class="px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-stone-950 font-bold text-xs shadow-md transition-all whitespace-nowrap">
+              Subscribe Free
+            </button>
+          </form>
+
+          <div class="flex items-center gap-4 text-[11px] text-stone-400 font-mono mt-4">
+            <span>✓ ZERO SPAM</span>
+            <span>·</span>
+            <span>DIRECT RESEARCH</span>
+            <span>·</span>
+            <span>UNSUBSCRIBE ANYTIME</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= ARTICLE READING MODAL ================= -->
+  <div id="article-modal" class="fixed inset-0 bg-stone-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-stone-200 shadow-2xl relative">
+      <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-stone-50 sticky top-0 z-10">
+        <div>
+          <span id="article-modal-category" class="text-[10px] font-mono uppercase font-bold text-brand"></span>
+          <span class="text-stone-300 mx-2">·</span>
+          <span id="article-modal-date" class="text-[11px] text-stone-500 font-mono"></span>
+        </div>
+        <button onclick="closeArticleModal()" class="text-stone-400 hover:text-stone-800 p-1 text-xl font-bold">✕</button>
+      </div>
+
+      <div class="p-6 sm:p-8 space-y-4">
+        <img id="article-modal-img" src="" alt="Article cover" class="w-full h-64 object-cover rounded-2xl border border-stone-200 shadow-sm" />
+        
+        <h2 id="article-modal-title" class="text-2xl sm:text-3xl font-serif font-bold text-stone-900"></h2>
+        
+        <div class="flex items-center gap-2 text-xs text-stone-500 pb-2 border-b border-stone-100">
+          <span>By <strong id="article-modal-author" class="text-stone-800"></strong></span>
+          <span>·</span>
+          <span>5 min read</span>
+        </div>
+
+        <div id="article-modal-body" class="text-xs sm:text-sm text-stone-700 leading-relaxed space-y-3 pt-2"></div>
+      </div>
+
+      <div class="p-5 border-t border-stone-200 bg-stone-50 flex items-center justify-between">
+        <button onclick="closeArticleModal()" class="px-5 py-2.5 rounded-full border border-stone-300 text-stone-700 text-xs font-medium hover:bg-stone-100">Close</button>
+        <button onclick="closeArticleModal(); CV_TRADE.openDrawer();" class="px-6 py-2.5 rounded-full bg-stone-950 hover:bg-black text-white text-xs font-semibold">Inquire on Related Products →</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= MASTER FOOTER (LUMÓRA MEGA-FOOTER) ================= -->
+  
+  </main>
+
+  <footer class="bg-stone-950 text-white pt-16 pb-12 border-t border-stone-900">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Mega Brand Title -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-12 border-b border-stone-800/80">
+        <div>
+          <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2 block">[ BUILT TO ENDURE ]</span>
+          <div class="text-5xl sm:text-7xl lg:text-8xl font-serif font-bold text-white tracking-tight leading-none">
+            Clipeus Virtutis<sup class="text-2xl sm:text-4xl text-stone-500 font-sans font-normal ml-2">®</sup>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <div class="px-4 py-2 rounded-full bg-stone-900 border border-stone-800 text-stone-300 font-mono text-xs flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>CHENNAI PORT BERTH · 13.0827° N, 80.2707° E · IST (UTC+5:30)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mid Links & Contact Grid -->
+      <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 border-b border-stone-800/80">
+        
+        <!-- Col 1: Direct Contact Email Pill -->
+        <div class="lg:col-span-2 space-y-4">
+          <p class="text-xs text-stone-400 leading-relaxed max-w-sm">
+            For international trade desk inquiries, CIF/FOB proforma pricing, and lab sample dispatch:
+          </p>
+          <a href="mailto:trade@clipeusvirtutis.com" class="inline-block text-lg sm:text-xl font-serif text-white hover:text-emerald-400 underline underline-offset-8 transition-colors break-all sm:break-normal">
+            trade@clipeusvirtutis.com
+          </a>
+          <div class="text-xs text-stone-400 font-mono pt-2">
+            Trade Liaison Line: <a href="tel:+917299249907" class="text-white hover:underline">+91 7299249907</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <div class="text-[11px] font-mono text-stone-400 uppercase tracking-wider mb-4">NAVIGATION</div>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home Portal</a></li>
+            <li><a href="products.html" class="hover:text-white transition-colors">Products Catalog</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="solutions.html" class="hover:text-white transition-colors">Trade Solutions</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors">Sourcing Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Research & Solutions -->
+        <div>
+          <div class="text-[11px] font-mono text-stone-400 uppercase tracking-wider mb-4">SOLUTIONS</div>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="solutions.html" class="hover:text-white transition-colors">Industrial Materials</a></li>
+            <li><a href="solutions.html" class="hover:text-white transition-colors">Agro Commodities</a></li>
+            <li><a href="solutions.html" class="hover:text-white transition-colors">Sustainable Innovations</a></li>
+            <li><a href="solutions.html" class="hover:text-white transition-colors">TRL-7 CleanTech</a></li>
+            <li><a href="partners.html" class="hover:text-white transition-colors">Chamber Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Compliance & Desk -->
+        <div>
+          <div class="text-[11px] font-mono text-stone-400 uppercase tracking-wider mb-4">COMPLIANCE &amp; LAB</div>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><span class="text-stone-300">NABL ISO/IEC 17025</span></li>
+            <li><span class="text-stone-300">Incoterms 2020 Compliant</span></li>
+            <li><span class="text-stone-300">APEDA / DGFT Compliant</span></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Trade Insights &amp; Dossiers</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Commercial Desk HQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <div>
+          © 2026 Clipeus Virtutis. All rights reserved. Registered Indian B2B Export &amp; Trade Commercialization Gateway.
+          <span class="mx-2 text-stone-700">|</span>
+          <a href="https://kronixtech.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-stone-400 hover:text-emerald-400 transition-colors font-medium">
+            <span>Powered by</span>
+            <strong class="text-white hover:text-emerald-400 transition-colors font-semibold">Kronixtech</strong>
+            <span class="text-[9px] text-emerald-400">↗</span>
+          </a>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-stone-300 transition-colors">Terms of Trade</a>
+          <a href="#" class="hover:text-stone-300 transition-colors">Lab Protocols</a>
+          <a href="#" class="hover:text-stone-300 transition-colors">Privacy Notice</a>
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-8 h-8 rounded-full bg-stone-900 border border-stone-800 text-stone-400 hover:text-white flex items-center justify-center transition-colors">
+            ↑
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Include Shared RFQ Drawer -->
+  <div id="rfq-drawer-backdrop" onclick="CV_TRADE.closeDrawer()" class="fixed inset-0 bg-stone-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="rfq-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 sm:p-5 border-b border-stone-200 flex items-center justify-between bg-stone-900 text-white">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <div>
+          <h3 class="font-serif font-bold text-sm">Official B2B RFQ Inquiry Desk</h3>
+          <span class="text-[10px] text-stone-400 font-mono">Response SLA: &lt; 24h · Chennai Trade Desk</span>
+        </div>
+      </div>
+      <button onclick="CV_TRADE.closeDrawer()" class="p-1 rounded text-stone-400 hover:text-white text-base">✕</button>
+    </div>
+
+    <div class="p-5 flex-1 overflow-y-auto space-y-5">
+      <div>
+        <div class="flex items-center justify-between text-xs font-mono mb-2">
+          <span class="text-stone-500 font-bold uppercase">SELECTED PRODUCTS:</span>
+          <span id="drawer-docket-total" class="font-bold text-stone-900">0 Items</span>
+        </div>
+
+        <div id="drawer-docket-empty" class="text-center py-6 px-4 rounded-xl bg-stone-50 border border-dashed border-stone-300 text-stone-500 text-xs">
+          <p class="font-medium text-stone-800">Your Inquiry Docket is Empty</p>
+          <p class="text-[11px] text-stone-500 mt-1">Visit our <a href="products.html" class="text-brand font-bold underline">Products Catalog</a> to assemble an inquiry, or enter your requirements below.</p>
+        </div>
+
+        <div id="drawer-docket-list" class="space-y-1.5 hidden"></div>
+      </div>
+
+      <form id="drawer-rfq-form" onsubmit="CV_TRADE.handleDrawerSubmit(event)" class="space-y-3 pt-3 border-t border-stone-200 text-xs">
+        <input type="hidden" id="drawer-docket-input" name="docket_products" value="" />
+        <div>
+          <label class="block font-medium text-stone-700 mb-1">Company / Institution *</label>
+          <input type="text" id="drawer-company" required placeholder="e.g. GreenTech Global Ltd" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-medium text-stone-700 mb-1">Corporate Email *</label>
+            <input type="email" id="drawer-email" required placeholder="procurement@company.com" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+          </div>
+          <div>
+            <label class="block font-medium text-stone-700 mb-1">Phone / WhatsApp *</label>
+            <input type="tel" id="drawer-phone" required placeholder="+91 98765 43210" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-medium text-stone-700 mb-1">Estimated Volume *</label>
+            <input type="text" id="drawer-volume" required placeholder="e.g. 5 MT / 1,000 Packs" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+          </div>
+          <div>
+            <label class="block font-medium text-stone-700 mb-1">Incoterms 2020</label>
+            <select id="drawer-incoterm" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white">
+              <option value="CIF">CIF - Cost, Insurance &amp; Freight</option>
+              <option value="FOB">FOB - Free On Board (Chennai)</option>
+              <option value="DDP">DDP - Delivered Duty Paid</option>
+              <option value="EXW">EXW - Factory Gate Pickup</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium text-stone-700 mb-1">Destination Discharge Port / City *</label>
+          <input type="text" id="drawer-port" required placeholder="e.g. Rotterdam, Hamburg, Singapore, Dubai" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+        </div>
+        <div class="flex items-center gap-2 pt-1">
+          <input type="checkbox" id="drawer-sample" class="rounded text-brand" />
+          <label for="drawer-sample" class="text-[11px] text-stone-600">Request physical laboratory sample kit</label>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-brand hover:bg-brand-dark text-white font-medium text-xs shadow-sm transition-all">Submit RFQ Inquiry</button>
+      </form>
+      <div id="drawer-rfq-success" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 space-y-2">
+        <div class="font-bold text-emerald-700">✓ RFQ Inquiry Received</div>
+        <div class="font-mono text-[11px]">Ref: <span id="drawer-success-ref" class="font-bold text-brand"></span></div>
+        <p id="drawer-success-details" class="text-[11px]"></p>
+        <div class="pt-2 flex gap-2">
+          <button type="button" onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-stone-900 text-white text-[11px] font-medium">Print Docket</button>
+          <button type="button" onclick="CV_TRADE.resetDrawerForm()" class="px-3 py-1.5 rounded-lg border border-stone-300 text-stone-700 text-[11px]">New Inquiry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared.js?v=3.6"></script>
+  <script>
+    const ARTICLES = [
+      {
+        id: "1",
+        title: "The 2026 Cross-Border Sourcing Report",
+        category: "Policy & CBAM",
+        description: "Exploring emerging tariff structures, EU carbon-border adjustment mechanisms, and digitized bills of lading in transoceanic trade.",
+        image: "https://images.unsplash.com/photo-1573757056004-065ad36e2cf4?auto=format&fit=crop&w=800&q=80",
+        date: "2026-02-01",
+        author: "Trade Research Desk",
+        content: `
+          <p>The global trade landscape is undergoing structural realignments driven by stringent carbon-accounting directives across European and North American gateway ports. Digital transformation, AI-orchestrated customs clearances, and verifiable chain-of-custody protocols are replacing traditional analog brokerages.</p>
+          <p>Key drivers include automated customs declarations, paperless bill of lading verification, and carbon-intensity benchmarks. At Clipeus Virtutis, our digitized RFQ dockets and verifiable chain-of-custody protocols shield importers against sudden regulatory adjustments.</p>
+          <p>As green chemistry products transition from niche alternatives to mainstream industrial baselines, companies that embed verified laboratory standards will capture market share with lower compliance costs.</p>
+        `
+      },
+      {
+        id: "2",
+        title: "Supply Chain Resilience & Pallet Optimization",
+        category: "Logistics",
+        description: "How modern international trading houses optimize ocean container cube utilization, moisture barriers, and transit risk buffers.",
+        image: "https://images.unsplash.com/photo-1745847768382-816bfc32e1bb?auto=format&fit=crop&w=800&q=80",
+        date: "2026-01-20",
+        author: "Sarah Thompson, Logistics Lead",
+        content: `
+          <p>Efficient supply chain management is crucial for enterprise resilience. In an era where freight volatility and ocean container bottlenecks can disrupt entire production quarters, intelligent inventory buffer management is indispensable.</p>
+          <p>This report covers dynamic vendor auditing, pallet optimization to reduce ocean container dead space, and pre-negotiated Incoterms 2020 structures that allocate transit liability equitably.</p>
+          <p>By partnering with regional aggregators who provide consolidation warehousing, international buyers can achieve up to 24% reductions in landed per-unit shipping costs.</p>
+        `
+      },
+      {
+        id: "3",
+        title: "TRL-7 Machinery Sourcing: Due Diligence Protocols",
+        category: "CleanTech",
+        description: "A comprehensive guide to finding, vetting, and procuring decentralized waste-to-value pilot processing plants from certified manufacturers.",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+        date: "2026-01-14",
+        author: "Michael Chen, Equipment Specialist",
+        content: `
+          <p>Procuring specialized industrial machinery—especially decentralized waste-to-value pilot processing plants—requires strict engineering validation before purchase orders are signed.</p>
+          <p>Organizations must verify Technology Readiness Levels (TRL-7 or higher) to avoid prototypes disguised as commercial equipment. We recommend requiring factory acceptance tests (FAT), full skid component warranties, and on-site commissioning commitments.</p>
+          <p>Our TRL-7 mini pilot processing plants are engineered in direct consultation with leading industrial clean-tech fabrication specialists, ensuring commercial durability and straightforward operator training.</p>
+        `
+      },
+      {
+        id: "4",
+        title: "Navigating Import/Export Phytosanitary Compliance",
+        category: "Compliance",
+        description: "Stay compliant and eliminate customs demurrage with our expert guide to international agricultural bio-commodity regulations.",
+        image: "https://images.unsplash.com/photo-1504607798333-52a30db54a5d?auto=format&fit=crop&w=800&q=80",
+        date: "2025-12-28",
+        author: "David Roberts, Regulatory Counsel",
+        content: `
+          <p>International trade regulations are complex and ever-changing. From phytosanitary certificates for agricultural biocompost to non-toxic chemical declarations for leather shoe creams, documentation integrity is paramount.</p>
+          <p>Failing to furnish verified NABL test certificates or inaccurate HS codes can result in customs detention, costly demurrage fees, or product quarantine at destination ports.</p>
+          <p>Clipeus Virtutis manages comprehensive regulatory dossiers for every export consignment, ensuring seamless passage through customs desks across Asia, Europe, and the Middle East.</p>
+        `
+      },
+      {
+        id: "5",
+        title: "Quality Assurance in Bio-Industrial Sourcing",
+        category: "Lab Standards",
+        description: "Implementing NABL ISO/IEC 17025 accredited analytical protocols to guarantee zero-defect international shipments.",
+        image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&w=800&q=80",
+        date: "2025-12-15",
+        author: "Emily Watson, QA Director",
+        content: `
+          <p>Quality assurance is non-negotiable in international B2B commerce. The Roman virtue of <em>Virtus</em> embodies our commitment to zero-defect manufacturing.</p>
+          <p>Every batch of our BiGlySo biocompost, bio-bricks, and botanical sanitizers undergoes rigorous testing in ISO/IEC 17025 accredited laboratories. We test for moisture equilibrium, heavy metal absence, microbial counts, and compressive strength.</p>
+          <p>Transparent lab dossiers give international buyers the certainty they need to meet stringent domestic retail and industrial compliance thresholds.</p>
+        `
+      },
+      {
+        id: "6",
+        title: "IoT Container Telemetry & Cold-Chain Monitoring",
+        category: "Technology",
+        description: "How real-time environmental sensors inside ocean shipping containers are eliminating spoilage in sensitive bio-commodities.",
+        image: "https://images.unsplash.com/photo-1763568258205-3cbcf3ac56c6?auto=format&fit=crop&w=800&q=80",
+        date: "2025-12-04",
+        author: "Alex Turner, Smart Freight Analyst",
+        content: `
+          <p>Real-time telemetry and IoT environmental sensors inside shipping containers are transforming sensitive bio-material logistics. Temperature fluctuations and humidity spikes can now be monitored in real time during transoceanic voyages.</p>
+          <p>Combined with automated port handling and predictive ETA forecasting, businesses can dramatically reduce lead time uncertainties and optimize warehouse storage staging.</p>
+        `
+      }
+    ];
+
+    function renderBlogGrid() {
+      const container = document.getElementById('blog-posts-container');
+      if (!container) return;
+
+      container.innerHTML = ARTICLES.map((a, idx) => `
+        <div class="card-scroll-item specimen-card-3d rounded-3xl bg-[#F8F8F7] border border-stone-200/80 p-5 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all cursor-pointer" onclick="openArticleModal('${a.id}')">
+          <div>
+            <div class="relative h-48 rounded-2xl overflow-hidden bg-stone-200 mb-4">
+              <img src="${a.image}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-stone-950/80 backdrop-blur-md text-emerald-400 font-mono text-[10px] uppercase font-bold tracking-wider border border-stone-800">
+                ${a.category}
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2 text-[11px] font-mono text-stone-400 mb-2">
+              <span>${a.date}</span>
+              <span>·</span>
+              <span>${a.author}</span>
+            </div>
+
+            <h3 class="font-serif font-bold text-lg text-stone-950 group-hover:text-brand transition-colors mb-2 leading-snug">
+              ${a.title}
+            </h3>
+
+            <p class="text-xs text-stone-600 line-clamp-2 leading-relaxed">
+              ${a.description}
+            </p>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-stone-200/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-stone-900 group-hover:text-brand flex items-center gap-1.5 transition-colors">
+              <span>Read Full Dossier</span>
+              <span class="text-stone-400 group-hover:text-brand group-hover:translate-x-1 transition-all">→</span>
+            </span>
+            <span class="w-8 h-8 rounded-full bg-white border border-stone-200 flex items-center justify-center text-stone-400 group-hover:text-white group-hover:bg-stone-950 transition-colors text-xs">
+              ↗
+            </span>
+          </div>
+        </div>
+      `).join('');
+
+      initDirectionalScrollEngine();
+      init3DMagneticTilt();
+    }
+
+    function openArticleModal(id) {
+      const article = ARTICLES.find(a => a.id === id);
+      if (!article) return;
+
+      document.getElementById('article-modal-category').textContent = article.category;
+      document.getElementById('article-modal-date').textContent = article.date;
+      document.getElementById('article-modal-author').textContent = article.author;
+      document.getElementById('article-modal-title').textContent = article.title;
+      document.getElementById('article-modal-img').src = article.image;
+      document.getElementById('article-modal-body').innerHTML = article.content;
+
+      document.getElementById('article-modal').classList.remove('hidden');
+    }
+
+    function closeArticleModal() {
+      document.getElementById('article-modal').classList.add('hidden');
+    }
+
+    /* Direction-Aware Scroll Engine */
+    function initDirectionalScrollEngine() {
+      const cards = document.querySelectorAll('.card-scroll-item');
+      if (!cards.length) return;
+
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      let scrollDirection = 'down';
+
+      window.addEventListener('scroll', () => {
+        const currentY = window.pageYOffset || document.documentElement.scrollTop;
+        scrollDirection = currentY >= lastScrollY ? 'down' : 'up';
+        lastScrollY = currentY <= 0 ? 0 : currentY;
+      }, { passive: true });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.classList.remove('scroll-entering-down', 'scroll-entering-up');
+            el.classList.add(scrollDirection === 'down' ? 'scroll-entering-down' : 'scroll-entering-up');
+            void el.offsetWidth;
+            el.classList.add('scroll-revealed');
+          } else {
+            const rect = el.getBoundingClientRect();
+            if (rect.top > window.innerHeight || rect.bottom < 0) {
+              el.classList.remove('scroll-revealed', 'scroll-entering-down', 'scroll-entering-up');
+            }
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      cards.forEach(card => observer.observe(card));
+    }
+
+    /* 3D Magnetic Perspective Tilt */
+    function init3DMagneticTilt() {
+      const tiltCards = document.querySelectorAll('.specimen-card-3d');
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -7;
+          const rotateY = ((x - centerX) / centerX) * 7;
+          card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderBlogGrid();
+    });
+  </script>
+</body>
+</html>

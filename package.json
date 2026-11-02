@@ -1,0 +1,21 @@
+{
+  "name": "clipeus-virtutis-b2b",
+  "version": "2.0.0",
+  "description": "Clipeus Virtutis - Global B2B Sustainable Bio-Products Trade Portal",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 server.py",
+    "dev": "python3 server.py",
+    "serve": "python3 server.py"
+  },
+  "keywords": [
+    "b2b",
+    "trade",
+    "circular-economy",
+    "bioproducts",
+    "sustainable",
+    "export"
+  ],
+  "author": "Clipeus Virtutis",
+  "license": "UNLICENSED"
+}

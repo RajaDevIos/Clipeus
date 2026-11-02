@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="application-name" content="Clipeus Virtutis B2B Portal" />
+  <title>Services | Clipeus Virtutis® - Global Sourcing &amp; Supply Chain Management</title>
+  <meta name="description" content="Discover Clipeus Virtutis services: Trading & distribution, industrial product sourcing, vendor management, import/export handling, warehousing, and quality assurance." />
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css?v=3.6" />
+
+  <!-- Local Tailwind Engine -->
+  <script src="assets/tailwindcss.js"></script>
+  <script>
+    if (typeof tailwind === 'undefined') {
+      document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#0D4225',
+              dark: '#082B18',
+              light: '#1B5E38',
+              surface: '#F4F7F4',
+            },
+            bronze: {
+              DEFAULT: '#976336',
+              dark: '#74412A',
+              terracotta: '#A5775F',
+              clay: '#C4A49C',
+              blush: '#F2BDBA',
+              subtle: '#FAF6F2',
+            },
+            stone: {
+              950: '#121212',
+              900: '#1C1917',
+              800: '#292524',
+              700: '#44403C',
+              600: '#57534E',
+              500: '#78716C',
+              400: '#A8A29E',
+              300: '#D6D3D1',
+              200: '#E7E5E4',
+              100: '#F5F5F4',
+              50: '#FAFAF9',
+            }
+          },
+          maxWidth: {
+            content: '1440px',
+          },
+          boxShadow: {
+            'portfolio': '0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.05)',
+            'portfolio-hover': '0 30px 60px -15px rgba(13, 66, 37, 0.12), 0 0 1px 1px rgba(13, 66, 37, 0.1)',
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#F8F8F7] text-stone-900 font-sans antialiased selection:bg-brand selection:text-white relative">
+
+  <!-- ================= TOP TICKER RIBBON ================= -->
+  <div class="bg-[#0b0e0c] text-emerald-400 border-b border-emerald-950/60 py-2.5 overflow-hidden select-none font-mono text-[11px] relative shadow-inner z-40">
+    <div class="animate-marquee flex items-center">
+      <div class="flex items-center gap-8 pr-8">
+        <span class="inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-stone-400 font-sans uppercase tracking-wider text-[10px] font-semibold">B2B SERVICES DESK:</span>
+          <strong class="text-white">INTERNATIONAL SOURCING &amp; DISPATCH ACTIVE</strong>
+        </span>
+        <span class="text-stone-700">|</span>
+        <span class="inline-flex items-center gap-2">
+          <span class="text-amber-400">⚡</span>
+          <span class="text-stone-400 font-sans uppercase tracking-wider text-[10px] font-semibold">CUSTOMS &amp; LOGISTICS:</span>
+          <strong class="text-stone-200">PRIORITY BERTH · PORT OF CHENNAI</strong>
+        </span>
+      </div>
+    </div>
+  </div>
+  </header>
+
+    <!-- ================= MASTER HEADER (LUMÓRA FLOATING DOCK NAVIGATION) ================= -->
+  <header class="sticky top-0 z-40 bg-[#F8F8F7]/80 backdrop-blur-md border-b border-stone-200/80 transition-all relative">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+      
+      <!-- Brand Logo (Lumóra Style Grotesque Typography) -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group min-w-0 flex-shrink">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand text-white p-1 flex items-center justify-center shadow-sm overflow-hidden group-hover:scale-105 transition-transform flex-shrink-0">
+          <img src="logo.png" alt="Clipeus Virtutis Emblem" class="w-full h-full object-contain filter drop-shadow" onerror="this.src='assets/logo-icon-DYH3E1lo.png'"/>
+        </div>
+        <div class="flex items-baseline min-w-0">
+          <span class="font-sans font-bold text-lg sm:text-2xl tracking-tighter text-stone-950 truncate">
+            Clipeus Virtutis<sup class="text-[10px] sm:text-xs font-semibold ml-0.5">®</sup>
+          </span>
+        </div>
+      </a>
+
+      <!-- Floating Pill Navigation Dock with Dropdowns (Kronix Tech + Lumóra Signature Style) -->
+      <nav class="hidden lg:flex items-center px-6 py-2 rounded-full nav-pill-dock text-xs font-medium text-stone-600 gap-3">
+        <a href="index.html" class="hover:text-stone-950 transition-colors">Home</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="products.html" class="hover:text-stone-950 transition-colors">Products</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="about.html" class="hover:text-stone-950 transition-colors">About</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="solutions.html" class="hover:text-stone-950 transition-colors">Solutions</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="services.html" class="text-stone-950 font-bold dock-active">Services</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="partners.html" class="hover:text-stone-950 transition-colors">Partners</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="blog.html" class="hover:text-stone-950 transition-colors">Blog</a>
+        <span class="text-stone-300 font-mono text-[10px]">+</span>
+        <a href="contact.html" class="hover:text-stone-950 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        
+        <!-- Floating RFQ Docket Button (Single-line Compact on Mobile) -->
+        <button onclick="CV_TRADE.openDrawer()" class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white hover:bg-stone-50 text-stone-900 text-xs font-semibold border border-stone-200 shadow-sm transition-all flex-shrink-0 cursor-pointer" title="Open RFQ Docket">
+          <svg class="w-4 h-4 text-brand flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span class="hidden sm:inline whitespace-nowrap">RFQ Docket</span>
+          <span class="sm:hidden font-mono text-[11px] font-bold">RFQ</span>
+          <span class="cv-docket-count w-5 h-5 rounded-full bg-brand text-white flex items-center justify-center text-[10px] font-bold font-mono flex-shrink-0">0</span>
+        </button>
+
+        <!-- Request Quote Pill (Hidden on Mobile) -->
+        <button onclick="CV_TRADE.openDrawer()" class="hidden md:flex px-5 py-2.5 rounded-full bg-stone-950 hover:bg-black text-white text-xs font-semibold shadow-sm transition-all items-center gap-1.5 flex-shrink-0 cursor-pointer">
+          <span>Request Quote</span>
+          <span class="text-stone-400 font-normal">→</span>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" onclick="CV_TRADE.toggleMobileNav(event)" class="lg:hidden p-2 sm:p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 transition-all flex items-center justify-center flex-shrink-0 cursor-pointer" aria-label="Toggle navigation" aria-expanded="false">
+          <svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+
+      </div>
+
+    </div>
+
+              <!-- ========================================================
+       KRONIX TECH STYLE FLOATING MOBILE DRAWER & DROPDOWN
+       ======================================================== -->
+      <!-- Full-Screen Blur Backdrop Overlay -->
+  <div id="mobile-nav-backdrop" onclick="CV_TRADE.closeMobileNav()"></div>
+
+  <!-- Floating 24px Pill-Card Drawer -->
+  <div id="mobile-nav-menu" class="bg-white" style="background-color: #ffffff !important;" role="dialog" aria-label="Mobile Navigation">
+    
+    <!-- Top Row: Navigation Tag & Close Button -->
+    <div class="flex items-center justify-between pb-3 mb-4 border-b border-stone-200/80">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-[11px] font-mono font-bold tracking-widest text-stone-400 uppercase">
+          NAVIGATION
+        </span>
+      </div>
+      <button onclick="CV_TRADE.closeMobileNav()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center transition-all cursor-pointer" aria-label="Close menu">
+        <svg class="w-4 h-4" width="16" height="16" style="width: 16px; height: 16px; min-width: 16px; min-height: 16px; display: block;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links (Clean Direct Links - Exact Kronix Tech Style) -->
+    <nav class="flex flex-col gap-1">
+      <a href="index.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Home</span>
+        
+      </a>
+
+      <a href="products.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Products Catalog</span>
+        
+      </a>
+
+      <a href="about.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>About Us</span>
+        
+      </a>
+
+      <a href="solutions.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Trade Solutions</span>
+        
+      </a>
+
+      <a href="services.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base active font-semibold text-stone-950 bg-stone-100 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Sourcing Services</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
+      </a>
+
+      <a href="partners.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Global Partners</span>
+        
+      </a>
+
+      <a href="blog.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Trade Insights</span>
+        
+      </a>
+
+      <a href="contact.html" class="kronix-nav-link flex items-center justify-between py-2.5 px-3 rounded-xl text-base font-medium text-stone-800 hover:text-emerald-700 hover:bg-stone-50 transition-colors">
+        <span>Contact HQ</span>
+        
+      </a>
+    </nav>
+
+    <!-- Bottom Action CTAs (Kronix Tech Style) -->
+    <div class="pt-5 mt-4 border-t border-stone-200/80 flex flex-col gap-2.5">
+      <button onclick="CV_TRADE.openDrawer(); CV_TRADE.closeMobileNav();" class="w-full py-3 px-4 rounded-xl bg-brand hover:bg-emerald-950 text-white text-xs font-semibold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+        <span>Open RFQ Inquiry Docket</span>
+        <span class="cv-docket-count px-2 py-0.5 rounded-full bg-emerald-600 text-[10px] font-mono">0</span>
+      </button>
+
+      <a href="contact.html" onclick="CV_TRADE.closeMobileNav()" class="w-full py-2.5 px-4 rounded-xl border border-stone-200 hover:border-stone-300 bg-stone-50 text-stone-800 text-xs font-medium transition-all text-center block">
+        Contact Trade Desk · +91 7299249907
+      </a>
+
+      <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 pt-1">
+        <span class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Direct Port Clearance Active
+        </span>
+        <a href="https://kronixtech.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-stone-500 hover:text-emerald-700 font-sans font-medium transition-colors">
+          <span>Powered by</span>
+          <strong class="text-stone-900 font-bold hover:text-emerald-700">Kronixtech</strong>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= MAIN VIEWPORT (TURBO PAGE ENGINE) ================= -->
+  <main id="main-content" class="cv-page-content">
+
+
+  <!-- ================= HERO SECTION (LUMÓRA TYPOGRAPHY & ROUNDED STAGE) ================= -->
+  <section class="pt-6 sm:pt-10 pb-16 px-4 sm:px-6 lg:px-8 max-w-content mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+      <div>
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-sans font-extrabold tracking-tighter text-stone-950 leading-[0.95]">
+          Trade Services<sup class="text-2xl sm:text-3xl font-normal text-stone-400">®</sup>
+        </h1>
+      </div>
+
+      <div class="flex items-start gap-4 max-w-md pb-2">
+        <div class="flex -space-x-2 overflow-hidden flex-shrink-0 pt-0.5">
+          <div class="w-8 h-8 rounded-full bg-emerald-800 text-white font-mono text-[10px] font-bold flex items-center justify-center border-2 border-white">SLA</div>
+          <div class="w-8 h-8 rounded-full bg-stone-800 text-amber-300 font-mono text-[10px] font-bold flex items-center justify-center border-2 border-white">24H</div>
+          <div class="w-8 h-8 rounded-full bg-amber-700 text-white font-mono text-[10px] font-bold flex items-center justify-center border-2 border-white">QC</div>
+        </div>
+
+        <div class="space-y-1">
+          <span class="text-[10px] font-mono font-bold tracking-widest text-stone-500 uppercase block">
+            [ BUILT TO ENDURE · EST. 2024 ]
+          </span>
+          <p class="text-xs sm:text-sm text-stone-600 leading-snug">
+            Full-Spectrum International B2B Wholesale Execution: Lab Testing, Port Logistics, Custom Formulation &amp; Containerized Export Dispatch.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rounded Visual Stage Container -->
+    <div class="relative w-full rounded-[28px] sm:rounded-[40px] overflow-hidden bg-stone-950 text-white shadow-2xl border border-stone-800 min-h-[400px] sm:min-h-[460px] flex flex-col justify-between p-8 sm:p-12">
+      <div class="absolute inset-0 z-0">
+        <img src="assets/services-bg-DCMlbXO1.jpg" alt="Services Operations" class="w-full h-full object-cover filter brightness-[0.4] contrast-[1.1]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/70"></div>
+      </div>
+
+      <div class="relative z-10 flex items-start justify-between">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-xs border border-emerald-500/30">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>B2B TRADE EXECUTION DESK</span>
+        </div>
+
+        <div class="px-4 py-2 rounded-2xl bg-white/10 backdrop-blur-md text-stone-300 text-xs font-mono border border-white/10">
+          Response SLA: &lt; 24h Guaranteed
+        </div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl space-y-3">
+        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight">
+          Precision Sourcing &amp; Compliance Management
+        </h2>
+        <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+          We handle supplier auditing, batch chemistry testing, freight space booking, and customs release under strict Incoterms 2020 contracts.
+        </p>
+      </div>
+
+      <div class="relative z-10 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-stone-400">
+        <span>Factory Gate Audits · Bill of Lading · Ocean Freight CIF/FOB</span>
+        <span>100% Pre-Shipment Tested</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION [ 01 ]: 6 CORE SERVICES BENTO GRID ================= -->
+  <section class="py-16 sm:py-24 bg-white border-b border-stone-200">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        <div class="lg:col-span-3">
+          <span class="text-xs font-mono font-bold tracking-widest uppercase text-stone-400 block">
+            [ 01 ] CORE SERVICES
+          </span>
+        </div>
+        <div class="lg:col-span-9">
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-sans font-medium text-stone-950 tracking-tight leading-[1.25]">
+            Professional trade solutions designed to eliminate supply friction, verify chemical specifications, and guarantee on-time port dispatch.
+          </h2>
+        </div>
+      </div>
+
+      <!-- 6 Capability Cards (Exact Match to User Reference Image) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Trading Solutions -->
+        <div class="trade-capability-card">
+          <div class="capability-icon-box">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="trade-capability-title">Trading Solutions</h3>
+          <p class="trade-capability-desc">
+            Comprehensive international trading services connecting global markets efficiently.
+          </p>
+        </div>
+
+        <!-- Card 2: Supply Chain Support -->
+        <div class="trade-capability-card">
+          <div class="capability-icon-box">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <h3 class="trade-capability-title">Supply Chain Support</h3>
+          <p class="trade-capability-desc">
+            End-to-end supply chain management ensuring seamless operations.
+          </p>
+        </div>
+
+        <!-- Card 3: Procurement Assistance -->
+        <div class="trade-capability-card">
+          <div class="capability-icon-box">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="trade-capability-title">Procurement Assistance</h3>
+          <p class="trade-capability-desc">
+            Strategic sourcing and procurement services for optimal value.
+          </p>
+        </div>
+
+        <!-- Card 4: Import/Export Management -->
+        <div class="trade-capability-card">
+          <div class="capability-icon-box">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          </div>
+          <h3 class="trade-capability-title">Import/Export Management</h3>
+          <p class="trade-capability-desc">
+            Expert handling of international trade documentation and logistics.
+          </p>
+        </div>
+
+        <!-- Card 5: Quality Assurance -->
+        <div class="trade-capability-card">
+          <div class="capability-icon-box">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="trade-capability-title">Quality Assurance</h3>
+          <p class="trade-capability-desc">
+            Rigorous quality control ensuring product excellence.
+          </p>
+        </div>
+
+        <!-- Card 6: Fast Delivery -->
+        <div class="trade-capability-card">
+          <div class="capability-icon-box">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="trade-capability-title">Fast Delivery</h3>
+          <p class="trade-capability-desc">
+            Efficient logistics network for timely product delivery worldwide.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION [ 02 ]: 4-STEP SOURCING SEQUENCE (LUMÓRA STEPPED CARDS) ================= -->
+  <section class="py-16 sm:py-24 bg-[#F8F8F7] border-b border-stone-200">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-widest uppercase text-stone-400 block mb-2">
+            [ 02 ] SOURCING WORKFLOW
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-sans font-bold text-stone-950 tracking-tight">
+            How We Execute Your Consignment
+          </h2>
+        </div>
+        <div class="max-w-md">
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Our systematic 4-phase sourcing protocol ensures complete quality protection from technical RFQ specification to final port discharge.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-[28px] bg-white border border-stone-200/90 flex flex-col justify-between h-[360px] shadow-sm hover:shadow-portfolio transition-all">
+          <div class="stepped-box-wrap"><div class="stepped-fill-1"></div></div>
+          <div class="space-y-2 pt-4">
+            <span class="text-xs font-mono text-stone-400">01</span>
+            <h3 class="text-lg font-sans font-bold text-stone-950">RFQ Specification</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Review buyer parameters, tonnage requirements, destination port, and generate custom proforma.</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-[28px] bg-white border border-stone-200/90 flex flex-col justify-between h-[360px] shadow-sm hover:shadow-portfolio transition-all">
+          <div class="stepped-box-wrap"><div class="stepped-fill-2"></div></div>
+          <div class="space-y-2 pt-4">
+            <span class="text-xs font-mono text-stone-400">02</span>
+            <h3 class="text-lg font-sans font-bold text-stone-950">Pre-Shipment Lab Test</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Batch testing in NABL ISO/IEC 17025 accredited facility. COA certificate issued for all parameters.</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-[28px] bg-white border border-stone-200/90 flex flex-col justify-between h-[360px] shadow-sm hover:shadow-portfolio transition-all">
+          <div class="stepped-box-wrap"><div class="stepped-fill-3"></div></div>
+          <div class="space-y-2 pt-4">
+            <span class="text-xs font-mono text-stone-400">03</span>
+            <h3 class="text-lg font-sans font-bold text-stone-950">Container Stuffing</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Palletization, shrink-wrapping, moisture barrier liners, and sealed container loading at Chennai.</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-[28px] bg-white border border-stone-200/90 flex flex-col justify-between h-[360px] shadow-sm hover:shadow-portfolio transition-all">
+          <div class="stepped-box-wrap"><div class="stepped-fill-4"></div></div>
+          <div class="space-y-2 pt-4">
+            <span class="text-xs font-mono text-stone-400">04</span>
+            <h3 class="text-lg font-sans font-bold text-stone-950">Customs &amp; Discharge</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Full bill of lading clearance, ocean freight transit tracking, and destination port handover under CIF/DDP.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MASTER FOOTER (LUMÓRA STYLE) ================= -->
+  
+  </main>
+
+  <footer class="bg-stone-950 text-white border-t border-stone-800 pt-16 pb-12">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-14 border-b border-stone-800">
+        <div>
+          <h2 class="text-5xl sm:text-7xl lg:text-8xl font-sans font-bold tracking-tighter text-white">
+            Clipeus Virtutis<sup class="text-xl sm:text-2xl font-normal text-stone-500">®</sup>
+          </h2>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900 border border-stone-800 text-stone-300 font-mono text-xs">
+          <span>⚓</span>
+          <span>Chennai Port · 28°C · Berth 04 Clear</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 py-12 border-b border-stone-800 text-xs">
+        <div class="md:col-span-2 lg:col-span-5 space-y-4">
+          <span class="text-stone-400 font-mono text-[11px] uppercase tracking-wider block">Direct Trade Desk:</span>
+          <a href="mailto:trade@clipeusvirtutis.com" class="text-xl sm:text-2xl lg:text-3xl font-sans font-medium text-white hover:text-emerald-400 underline decoration-stone-700 underline-offset-8 transition-colors block break-all sm:break-normal">
+            trade@clipeusvirtutis.com
+          </a>
+          <p class="text-stone-400 text-xs leading-relaxed max-w-sm pt-2">
+            Platinum Tower, Pallavaram, Chennai - 600043, India. Dispatch: +91 7299249907
+          </p>
+        </div>
+
+        <div class="md:col-span-1 lg:col-span-3 space-y-2.5">
+          <span class="text-stone-400 font-mono text-[11px] uppercase tracking-wider block mb-2">Navigation</span>
+          <div><a href="index.html" class="hover:text-emerald-400">Home</a></div>
+          <div><a href="products.html" class="hover:text-emerald-400">Products Catalog</a></div>
+          <div><a href="about.html" class="hover:text-emerald-400">About &amp; Roman Virtus Shield</a></div>
+          <div><a href="solutions.html" class="hover:text-emerald-400">Solutions</a></div>
+          <div><a href="services.html" class="text-emerald-400 font-bold">Services</a></div>
+          <div><a href="partners.html" class="hover:text-emerald-400">Partners</a></div>
+          <div><a href="contact.html" class="hover:text-emerald-400">Contact HQ</a></div>
+        </div>
+
+        <div class="md:col-span-1 lg:col-span-2 space-y-2.5">
+          <span class="text-stone-400 font-mono text-[11px] uppercase tracking-wider block mb-2">Accreditations</span>
+          <div class="text-stone-400">NABL ISO/IEC 17025</div>
+          <div class="text-stone-400">TRL-7 Validated</div>
+          <div class="text-stone-400">Incoterms 2020: CIF/FOB</div>
+          <div class="text-stone-400">ASTM / BIS Certified</div>
+        </div>
+
+        <div class="md:col-span-2 lg:col-span-2 space-y-3">
+          <button onclick="CV_TRADE.openDrawer()" class="w-full py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-sm transition-all">
+            Open RFQ Docket
+          </button>
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-full py-2.5 rounded-full bg-stone-900 hover:bg-stone-800 text-stone-400 text-xs font-mono transition-colors">
+            Back to top ↑
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-stone-500 text-[11px] gap-4">
+        <div>© 2026 Clipeus Virtutis. All rights reserved. International B2B Wholesale Portal.
+          <span class="mx-2 text-stone-700">|</span>
+          <a href="https://kronixtech.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-stone-400 hover:text-emerald-400 transition-colors font-medium">
+            <span>Powered by</span>
+            <strong class="text-white hover:text-emerald-400 transition-colors font-semibold">Kronixtech</strong>
+            <span class="text-[9px] text-emerald-400">↗</span>
+          </a></div>
+        <div class="flex items-center gap-4">
+          <a href="about.html" class="hover:text-stone-300">About</a>
+          <a href="contact.html" class="hover:text-stone-300">Contact</a>
+          <a href="partners.html" class="hover:text-stone-300">Chambers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include Shared RFQ Drawer -->
+  <div id="rfq-drawer-backdrop" onclick="CV_TRADE.closeDrawer()" class="fixed inset-0 bg-stone-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="rfq-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 sm:p-5 border-b border-stone-200 flex items-center justify-between bg-stone-900 text-white">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <h3 class="font-serif font-bold text-sm">Official B2B RFQ Inquiry Desk</h3>
+      </div>
+      <button onclick="CV_TRADE.closeDrawer()" class="p-1 rounded text-stone-400 hover:text-white text-base">✕</button>
+    </div>
+    <div class="p-5 flex-1 overflow-y-auto space-y-5">
+      <div>
+        <div class="flex items-center justify-between text-xs font-mono mb-2">
+          <span class="text-stone-500 font-bold uppercase">SELECTED PRODUCTS:</span>
+          <span id="drawer-docket-total" class="font-bold text-stone-900">0 Items</span>
+        </div>
+        <div id="drawer-docket-empty" class="text-center py-6 px-4 rounded-xl bg-stone-50 border border-dashed border-stone-300 text-stone-500 text-xs">
+          <p class="font-medium text-stone-800">Your Inquiry Docket is Empty</p>
+        </div>
+        <div id="drawer-docket-list" class="space-y-1.5 hidden"></div>
+      </div>
+      <form id="drawer-rfq-form" onsubmit="CV_TRADE.handleDrawerSubmit(event)" class="space-y-3 pt-3 border-t border-stone-200 text-xs">
+        <input type="hidden" id="drawer-docket-input" name="docket_products" value="" />
+        <div>
+          <label class="block font-medium text-stone-700 mb-1">Company / Institution *</label>
+          <input type="text" id="drawer-company" required placeholder="e.g. GreenTech Global Ltd" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-medium text-stone-700 mb-1">Corporate Email *</label>
+            <input type="email" id="drawer-email" required placeholder="procurement@company.com" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+          </div>
+          <div>
+            <label class="block font-medium text-stone-700 mb-1">Phone / WhatsApp *</label>
+            <input type="tel" id="drawer-phone" required placeholder="+91 98765 43210" class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium text-stone-700 mb-1">Services Required</label>
+          <textarea rows="3" placeholder="Specify your sourcing or freight inquiry..." class="w-full p-2.5 rounded-lg border border-stone-300 bg-stone-50 focus:bg-white"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-brand hover:bg-brand-dark text-white font-medium text-xs shadow-sm transition-all">Submit Sourcing Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="shared.js?v=3.6"></script>
+</body>
+</html>
