@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/style.css?v=3.6" />
+  <link rel="stylesheet" href="assets/style.css?v=4.0" />
 
   <!-- Local Tailwind Engine -->
   <script src="assets/tailwindcss.js"></script>
@@ -166,10 +166,10 @@
        KRONIX TECH STYLE FLOATING MOBILE DRAWER & DROPDOWN
        ======================================================== -->
       <!-- Full-Screen Blur Backdrop Overlay -->
-  <div id="mobile-nav-backdrop" onclick="CV_TRADE.closeMobileNav()"></div>
+  <div id="mobile-nav-backdrop" onclick="CV_TRADE.closeMobileNav()" class="hidden" style="display: none;"></div>
 
   <!-- Floating 24px Pill-Card Drawer -->
-  <div id="mobile-nav-menu" class="bg-white" style="background-color: #ffffff !important;" role="dialog" aria-label="Mobile Navigation">
+  <div id="mobile-nav-menu" class="bg-white hidden" style="display: none; background-color: #ffffff !important;" role="dialog" aria-label="Mobile Navigation">
     
     <!-- Top Row: Navigation Tag & Close Button -->
     <div class="flex items-center justify-between pb-3 mb-4 border-b border-stone-200/80">
@@ -617,8 +617,8 @@
   </footer>
 
   <!-- ================= SLIDE-OVER RFQ INQUIRY DRAWER ================= -->
-  <div id="rfq-drawer-backdrop" onclick="CV_TRADE.closeDrawer()" class="fixed inset-0 bg-stone-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
-  <div id="rfq-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col invisible">
+  <div id="rfq-drawer-backdrop" onclick="CV_TRADE.closeDrawer()" class="fixed inset-0 bg-stone-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300" style="display: none;"></div>
+  <div id="rfq-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col hidden" style="display: none;">
     <div class="p-4 sm:p-5 border-b border-stone-200 flex items-center justify-between bg-stone-900 text-white">
       <div class="flex items-center gap-2">
         <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -730,7 +730,7 @@
     </div>
   </div>
 
-  <script src="shared.js?v=3.6"></script>
+  <script src="shared.js?v=4.0"></script>
   <script>
     const CATALOG = [
       {

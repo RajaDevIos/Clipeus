@@ -98,13 +98,17 @@ const CV_TRADE = {
     const drawer = document.getElementById('rfq-drawer');
     if (backdrop && drawer) {
       backdrop.classList.remove('hidden');
+      backdrop.style.display = 'block';
+      drawer.classList.remove('hidden', 'invisible');
+      drawer.style.display = 'flex';
+      // Force DOM layout reflow so the transition from translateX(100%) to translateX(0) triggers cleanly
+      void drawer.offsetHeight;
       requestAnimationFrame(() => {
-        backdrop.classList.remove('opacity-0');
         backdrop.classList.add('backdrop-open');
-        drawer.classList.remove('translate-x-full', 'invisible');
-        drawer.classList.add('drawer-open', 'visible');
+        drawer.classList.add('drawer-open');
       });
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     }
     CV_TRADE.renderDocketUI();
   },
@@ -113,14 +117,15 @@ const CV_TRADE = {
     const backdrop = document.getElementById('rfq-drawer-backdrop');
     const drawer = document.getElementById('rfq-drawer');
     if (backdrop && drawer) {
-      backdrop.classList.add('opacity-0');
       backdrop.classList.remove('backdrop-open');
-      drawer.classList.add('translate-x-full');
-      drawer.classList.remove('drawer-open', 'visible');
+      drawer.classList.remove('drawer-open');
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
       setTimeout(() => {
+        backdrop.style.display = 'none';
+        drawer.style.display = 'none';
         backdrop.classList.add('hidden');
-        drawer.classList.add('invisible');
+        drawer.classList.add('hidden');
       }, 320);
     }
   },
@@ -180,8 +185,13 @@ const CV_TRADE = {
     if (isOpen) {
       CV_TRADE.closeMobileNav();
     } else {
-      menu.classList.add('open');
-      if (backdrop) backdrop.classList.add('open');
+      menu.style.display = 'flex';
+      if (backdrop) backdrop.style.display = 'block';
+      void menu.offsetHeight;
+      requestAnimationFrame(() => {
+        menu.classList.add('open');
+        if (backdrop) backdrop.classList.add('open');
+      });
       document.body.style.overflow = 'hidden';
       if (btn) {
         btn.setAttribute('aria-expanded', 'true');
@@ -199,8 +209,12 @@ const CV_TRADE = {
     document.body.style.overflow = '';
     if (btn) {
       btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = `<svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>`;
+      btn.innerHTML = `<svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>`;
     }
+    setTimeout(() => {
+      if (menu && !menu.classList.contains('open')) menu.style.display = 'none';
+      if (backdrop && !backdrop.classList.contains('open')) backdrop.style.display = 'none';
+    }, 280);
   },
 
   toggleBgVideoMute: function() {

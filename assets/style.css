@@ -196,6 +196,7 @@ input[type=range].cv-slider::-moz-range-thumb {
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
+  display: none !important;
   pointer-events: none;
 }
 
@@ -208,17 +209,19 @@ input[type=range].cv-slider::-moz-range-thumb {
 #trade-advisory-modal.hidden-modal {
   opacity: 0;
   visibility: hidden;
+  display: none !important;
   pointer-events: none;
   transform: translateY(20px) scale(0.95);
 }
 #trade-advisory-modal.active-modal {
   opacity: 1;
   visibility: visible;
+  display: block !important;
   pointer-events: auto;
   transform: translateY(0) scale(1);
 }
 
-/* Slide-Over RFQ Inquiry Drawer (Mobile Responsive & Clean) */
+/* Slide-Over RFQ Inquiry Drawer (Zero-Overflow Mobile Engine) */
 #rfq-drawer-backdrop {
   position: fixed !important;
   inset: 0 !important;
@@ -230,16 +233,14 @@ input[type=range].cv-slider::-moz-range-thumb {
   -webkit-backdrop-filter: blur(8px) !important;
   z-index: 99990 !important;
   opacity: 0;
-  visibility: hidden !important;
+  display: none !important;
   pointer-events: none !important;
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease !important;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-#rfq-drawer-backdrop.backdrop-open,
-#rfq-drawer-backdrop.active,
-#rfq-drawer-backdrop:not(.hidden):not(.opacity-0) {
+#rfq-drawer-backdrop.backdrop-open {
   opacity: 1 !important;
-  visibility: visible !important;
+  display: block !important;
   pointer-events: auto !important;
 }
 
@@ -254,21 +255,19 @@ input[type=range].cv-slider::-moz-range-thumb {
   max-width: 440px !important;
   background: #ffffff !important;
   z-index: 99995 !important;
-  transform: translateX(100%) !important;
-  visibility: hidden !important;
+  transform: translateX(100%);
+  display: none !important;
   pointer-events: none !important;
   box-shadow: -10px 0 35px -5px rgba(0, 0, 0, 0.3) !important;
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease !important;
-  overflow: hidden !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
   box-sizing: border-box !important;
 }
 
-#rfq-drawer.drawer-open,
-#rfq-drawer.open,
-#rfq-drawer.active,
-#rfq-drawer:not(.translate-x-full) {
+#rfq-drawer.drawer-open {
+  display: flex !important;
   transform: translateX(0) !important;
-  visibility: visible !important;
   pointer-events: auto !important;
 }
 
@@ -434,11 +433,13 @@ input[type=range].cv-slider::-moz-range-thumb {
   inset: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
+  height: 100dvh !important;
   background: rgba(0, 0, 0, 0.6) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   z-index: 9998 !important;
   opacity: 0;
+  display: none !important;
   visibility: hidden !important;
   pointer-events: none !important;
   transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease !important;
@@ -446,13 +447,14 @@ input[type=range].cv-slider::-moz-range-thumb {
 
 #mobile-nav-backdrop.open {
   opacity: 1 !important;
+  display: block !important;
   visibility: visible !important;
   pointer-events: auto !important;
 }
 
 /* Floating Sidebar Sheet (Exact Kronix Tech 24px Pill-Card) */
 #mobile-nav-menu {
-  display: flex !important;
+  display: none !important;
   flex-direction: column !important;
   position: fixed !important;
   top: 1rem !important;
@@ -478,6 +480,7 @@ input[type=range].cv-slider::-moz-range-thumb {
 }
 
 #mobile-nav-menu.open {
+  display: flex !important;
   opacity: 1 !important;
   visibility: visible !important;
   transform: scale(1) translateY(0) !important;
