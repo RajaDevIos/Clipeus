@@ -3,3 +3,6 @@
 *.bak
 __pycache__/
 *.pyc
+lib/
+*.db
+

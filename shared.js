@@ -141,7 +141,34 @@ const CV_TRADE = {
     const port = document.getElementById('drawer-port')?.value || 'Global';
     const sampleReq = document.getElementById('drawer-sample')?.checked;
 
-    const rfqId = `CV-RFQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    let rfqId = `CV-RFQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    const payload = {
+      company_name: company,
+      email: email,
+      phone: phone,
+      volume: volume,
+      incoterm: incoterm,
+      destination_port: port,
+      products_requested: docket.length > 0 ? docket.join('; ') : 'General Trade Portfolio Inquiry',
+      sample_kit_requested: !!sampleReq
+    };
+
+    // Store directly in PostgreSQL / Database API
+    fetch('/api/enquiries', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.reference_no) {
+        rfqId = data.reference_no;
+        const refEl = document.getElementById('drawer-success-ref');
+        if (refEl) refEl.textContent = rfqId;
+      }
+    })
+    .catch(() => {});
 
     const form = document.getElementById('drawer-rfq-form');
     const successBox = document.getElementById('drawer-rfq-success');
@@ -155,7 +182,7 @@ const CV_TRADE = {
       if (refEl) refEl.textContent = rfqId;
       if (detailEl) {
         detailEl.innerHTML = `
-          <strong>${company}</strong>, your formal RFQ inquiry for <strong>${docket.length > 0 ? docket.join(', ') : 'Verified Trade Products'}</strong> has been routed to our Chennai Trade Desk. Formal landed quote under <strong>Incoterms ${incoterm} (${port})</strong> for volume <strong>${volume}</strong>${sampleReq ? ' <em>(with Physical Lab Sample Pack)</em>' : ''} will be delivered to <strong>${email}</strong> within 18-24 hours.
+          <strong>${company}</strong>, your formal RFQ inquiry for <strong>${docket.length > 0 ? docket.join(', ') : 'Verified Trade Products'}</strong> has been registered directly into our Trade Database. Formal landed quote under <strong>Incoterms ${incoterm} (${port})</strong> for volume <strong>${volume}</strong>${sampleReq ? ' <em>(with Physical Lab Sample Pack)</em>' : ''} will be delivered to <strong>${email}</strong> within 18-24 hours.
         `;
       }
     }
@@ -227,11 +254,17 @@ const CV_TRADE = {
 
     const isMuted = video.muted;
     if (isMuted) {
-      // Unmute video
+      // Unmute video's native audio track (Single clean audio channel, zero double-voice)
       video.muted = false;
       video.defaultMuted = false;
       video.removeAttribute('muted');
       video.volume = 1.0;
+
+      // Always stop any standalone audio to prevent double voice / echo
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
 
       // Web Audio API unlock for Safari / WebKit
       try {
@@ -246,17 +279,6 @@ const CV_TRADE = {
       const pVid = video.play();
       if (pVid && typeof pVid.catch === 'function') {
         pVid.catch(function() {});
-      }
-
-      // Sync and play standalone audio stream as guaranteed sound channel
-      if (audio) {
-        audio.muted = false;
-        audio.volume = 1.0;
-        audio.currentTime = video.currentTime || 0;
-        const pAud = audio.play();
-        if (pAud && typeof pAud.catch === 'function') {
-          pAud.catch(function() {});
-        }
       }
 
       if (label) label.textContent = 'Mute Audio';

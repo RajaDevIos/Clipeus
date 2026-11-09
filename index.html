@@ -129,12 +129,14 @@
         Direct manufacturer-gate sustainable commodities, high-purity cellulose, and TRL-7 industrial formulations are currently clearing for global export from Port of Chennai under Incoterms 2020.
       </p>
 
-      <div class="flex items-center gap-2 pt-1">
-        <button type="button" onclick="scrollToProductsAndHighlight()" class="flex-1 py-2.5 px-3 rounded-xl bg-[#0D4225] hover:bg-[#082B18] text-white text-xs font-semibold shadow-sm transition-all text-center">
-          📦 Explore Catalog
+      <div class="grid grid-cols-2 gap-2.5 pt-1">
+        <button type="button" onclick="scrollToProductsAndHighlight()" class="w-full py-2.5 px-3 rounded-xl bg-[#0D4225] hover:bg-[#082B18] text-white text-xs font-semibold shadow-sm transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>📦</span>
+          <span>Explore Catalog</span>
         </button>
-        <button type="button" onclick="CV_TRADE.openDrawer(); closeTradeAdvisoryModal();" class="py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-medium border border-stone-300 transition-colors">
-          🧪 Request Sample Kit
+        <button type="button" onclick="CV_TRADE.openDrawer(); closeTradeAdvisoryModal();" class="w-full py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-medium border border-stone-300 transition-colors text-center flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>🧪</span>
+          <span>Request Sample Kit</span>
         </button>
       </div>
 
@@ -408,13 +410,12 @@
       
       <!-- Video Background Engine (High Visibility & Dual Sync Audio) -->
       <div class="absolute inset-0 z-0 overflow-hidden">
+        <!-- High Visibility Video Stream -->
         <video id="bg-trade-video" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover scale-100 filter brightness-100 contrast-100 transition-all duration-700 ease-out">
           <source src="clipeus-about.mp4" type="video/mp4" />
           <source src="videos/clipeus-about.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
-        <!-- Dual Sync Web-Optimized Stereo Audio Stream -->
-        <audio id="bg-trade-audio" src="assets/clipeus-audio.m4a" preload="auto" loop></audio>
         
         <!-- Gentle Subtle Scrim: Keeps Video Luminous & Crisp -->
         <div id="bg-video-scrim" class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/30 pointer-events-none transition-opacity duration-500"></div>

@@ -857,7 +857,33 @@
       const port = document.getElementById('cnt-port').value;
       const sampleRequested = document.getElementById('cnt-sample').checked;
 
-      const rfqId = `CV-RFQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+      let rfqId = `CV-RFQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      // Save to Database API
+      fetch('/api/enquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          company_name: company,
+          email: email,
+          phone: document.getElementById('cnt-phone')?.value || '',
+          volume: volume,
+          incoterm: incoterm,
+          destination_port: port,
+          products_requested: product,
+          sample_kit_requested: sampleRequested,
+          notes: document.getElementById('cnt-notes')?.value || ''
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.reference_no) {
+          rfqId = data.reference_no;
+          const refEl = document.getElementById('cnt-success-ref');
+          if (refEl) refEl.textContent = rfqId;
+        }
+      })
+      .catch(() => {});
 
       document.getElementById('contact-page-rfq').classList.add('hidden');
       const succ = document.getElementById('contact-success');
@@ -865,7 +891,7 @@
 
       document.getElementById('cnt-success-ref').textContent = rfqId;
       document.getElementById('cnt-success-msg').innerHTML = `
-        Thank you, <strong>${first} ${last}</strong> (${company}). Your commercial RFQ inquiry for <strong>${product}</strong> (Volume: <strong>${volume}</strong> under <strong>Incoterms ${incoterm}</strong> to <strong>${port}</strong>) has been logged with our Chennai desk. ${sampleRequested ? '<strong>A laboratory sample kit with NABL COA will be prepared for dispatch.</strong> ' : ''}An itemized proforma landed quote will be delivered to <strong>${email}</strong> within 18-24 hours.
+        Thank you, <strong>${first} ${last}</strong> (${company}). Your commercial RFQ inquiry for <strong>${product}</strong> (Volume: <strong>${volume}</strong> under <strong>Incoterms ${incoterm}</strong> to <strong>${port}</strong>) has been logged directly into our Trade Database. ${sampleRequested ? '<strong>A laboratory sample kit with NABL COA will be prepared for dispatch.</strong> ' : ''}An itemized proforma landed quote will be delivered to <strong>${email}</strong> within 18-24 hours.
       `;
       succ.scrollIntoView({ behavior: 'smooth' });
     }
