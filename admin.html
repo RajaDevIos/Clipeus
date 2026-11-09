@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-slate-950">
+<html lang="en" class="h-full bg-[#F8F8F7]">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clipeus Virtutis® | Trade & Laboratory Administration Portal</title>
   <link rel="icon" type="image/png" href="logo.png" />
 
-  <!-- Fonts & Tailwind -->
+  <!-- Fonts & Tailwind: Playfair Display (Serif Elegance) & Inter (Modern B2B Sans) & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="assets/tailwindcss.js"></script>
   <script>
     if (typeof tailwind === 'undefined') {
@@ -31,13 +31,34 @@
               DEFAULT: '#0D4225',
               dark: '#082B18',
               light: '#1B5E38',
+              surface: '#F4F7F4',
               accent: '#10B981',
             },
-            gold: {
-              400: '#FBBF24',
-              500: '#F59E0B',
-              600: '#D97706',
+            bronze: {
+              DEFAULT: '#976336',
+              dark: '#74412A',
+              terracotta: '#A5775F',
+              clay: '#C4A49C',
+              blush: '#F2BDBA',
+              subtle: '#FAF6F2',
+            },
+            stone: {
+              950: '#121212',
+              900: '#1C1917',
+              800: '#292524',
+              700: '#44403C',
+              600: '#57534E',
+              500: '#78716C',
+              400: '#A8A29E',
+              300: '#D6D3D1',
+              200: '#E7E5E4',
+              100: '#F5F5F4',
+              50: '#FAFAF9',
             }
+          },
+          boxShadow: {
+            'portfolio': '0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.05)',
+            'portfolio-hover': '0 30px 60px -15px rgba(13, 66, 37, 0.12), 0 0 1px 1px rgba(13, 66, 37, 0.1)',
           }
         }
       }
@@ -47,100 +68,121 @@
     body { font-family: 'Inter', sans-serif; }
     .font-serif { font-family: 'Playfair Display', Georgia, serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
-    /* Custom Scrollbar for clean data tables */
+    /* Editorial Light Scrollbar */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #0f172a; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    ::-webkit-scrollbar-track { background: #F5F5F4; }
+    ::-webkit-scrollbar-thumb { background: #D6D3D1; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #A8A29E; }
   </style>
 </head>
-<body class="h-full bg-slate-950 text-slate-100 antialiased flex flex-col">
+<body class="h-full bg-[#F8F8F7] text-stone-900 antialiased flex flex-col selection:bg-[#0D4225] selection:text-white">
 
   <!-- ========================================================================= -->
   <!-- 1. LOGIN SCREEN (RENDERED WHEN UNAUTHENTICATED) -->
   <!-- ========================================================================= -->
-  <div id="login-container" class="min-h-full flex items-center justify-center p-4 sm:p-6 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black">
-    <div class="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-      <!-- Glow ambient header -->
-      <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -top-24 -right-24 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div id="login-container" class="min-h-full flex-1 flex items-center justify-center p-4 sm:p-6 bg-[#F8F8F7] relative">
+    
+    <!-- Subtle Heritage Background Accents -->
+    <div class="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(#0D4225_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#0D4225]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="w-full max-w-md bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden text-stone-900">
+      
+      <!-- Top Brand Color Stripe -->
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0D4225] via-amber-500 to-[#0D4225]"></div>
 
       <!-- Brand Header -->
-      <div class="text-center space-y-3 mb-8">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#082B18] border border-emerald-500/40 p-2.5 shadow-xl shadow-emerald-950/50">
+      <div class="text-center space-y-3 mb-8 pt-2">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#0D4225] border border-emerald-600/40 p-2.5 shadow-lg shadow-[#0D4225]/20">
           <img src="logo.png" alt="Clipeus Virtutis Emblem" class="w-full h-full object-contain filter drop-shadow" />
         </div>
         <div>
-          <h1 class="font-serif font-bold text-2xl text-white tracking-wide">CLIPEUS VIRTUTIS<sup class="text-xs text-amber-400 font-sans ml-1">®</sup></h1>
-          <p class="font-mono text-xs text-emerald-400 tracking-wider uppercase mt-1">TRADE &amp; LABORATORY ADMIN CONSOLE</p>
+          <h1 class="font-serif font-bold text-2xl text-stone-900 tracking-wide">CLIPEUS VIRTUTIS<sup class="text-xs text-amber-600 font-sans ml-1">®</sup></h1>
+          <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-mono text-emerald-900 font-semibold uppercase tracking-widest">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span>Trade &amp; Laboratory Admin Portal</span>
+          </div>
         </div>
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-[11px] font-mono text-slate-400">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Port of Chennai · NABL ISO/IEC 17025</span>
-        </div>
+        <p class="font-mono text-[10px] text-stone-500 uppercase tracking-wider">PORT OF CHENNAI · NABL ISO/IEC 17025 ACCREDITED</p>
       </div>
 
       <!-- Login Form -->
       <form id="admin-login-form" onsubmit="handleAdminLogin(event)" class="space-y-4">
-        <div id="login-error-alert" class="hidden p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs flex items-center gap-2">
+        <div id="login-error-alert" class="hidden p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
           <span class="text-base">⚠️</span>
-          <span id="login-error-msg">Invalid credentials.</span>
+          <span id="login-error-msg">Invalid laboratory credentials.</span>
         </div>
 
         <div>
-          <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">Username</label>
+          <label class="block text-xs font-mono uppercase tracking-wider text-stone-700 font-semibold mb-1.5">Username</label>
           <div class="relative">
-            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500 text-sm">👤</span>
-            <input type="text" id="login-username" required placeholder="Lab" value="Lab" class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-mono" />
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-stone-400 text-sm">👤</span>
+            <input type="text" id="login-username" required placeholder="Lab" value="Lab" class="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:outline-none focus:border-[#0D4225] focus:ring-1 focus:ring-[#0D4225] transition-all font-mono" />
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">Password</label>
+          <label class="block text-xs font-mono uppercase tracking-wider text-stone-700 font-semibold mb-1.5">Password</label>
           <div class="relative">
-            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500 text-sm">🔒</span>
-            <input type="password" id="login-password" required placeholder="••••••••" value="lab@2026" class="w-full pl-10 pr-10 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-mono" />
-            <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-500 hover:text-slate-300 text-xs">👁️</button>
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-stone-400 text-sm">🔒</span>
+            <input type="password" id="login-password" required placeholder="••••••••" value="lab@2026" class="w-full pl-10 pr-10 py-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:outline-none focus:border-[#0D4225] focus:ring-1 focus:ring-[#0D4225] transition-all font-mono" />
+            <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-stone-400 hover:text-stone-700 text-xs">👁️</button>
           </div>
-          <div class="flex items-center justify-between mt-1 text-[11px] text-slate-500 font-mono">
-            <span>Lab / lab@2026</span>
-            <button type="button" onclick="fillDefaultCredentials()" class="text-emerald-400 hover:underline">Autofill</button>
+          <div class="flex items-center justify-between mt-1.5 text-[11px] text-stone-500 font-mono">
+            <span>Authorized: Lab / lab@2026</span>
+            <button type="button" onclick="fillDefaultCredentials()" class="text-emerald-800 font-semibold hover:underline">Autofill</button>
           </div>
         </div>
 
-        <button type="submit" id="login-submit-btn" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-semibold text-sm shadow-lg shadow-emerald-900/40 transition-all flex items-center justify-center gap-2 cursor-pointer mt-6">
-          <span>Authorize &amp; Access Console</span>
+        <button type="submit" id="login-submit-btn" class="w-full py-3.5 px-4 rounded-xl bg-[#0D4225] hover:bg-[#082B18] text-white font-semibold text-sm shadow-md shadow-[#0D4225]/20 transition-all flex items-center justify-center gap-2 cursor-pointer mt-6">
+          <span>Authorize &amp; Access Admin Console</span>
           <span>→</span>
         </button>
       </form>
 
-      <!-- Footer Security Notice -->
-      <div class="mt-8 pt-4 border-t border-slate-800/80 text-center text-[10px] font-mono text-slate-500">
-        Database: <span class="text-emerald-400">PostgreSQL</span> · 256-Bit Encrypted Session
+      <!-- Security Notice -->
+      <div class="mt-8 pt-4 border-t border-stone-200 text-center text-[10px] font-mono text-stone-500">
+        Database: <strong class="text-emerald-800 font-semibold">PostgreSQL</strong> · NABL Lab 256-Bit Authenticated
       </div>
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 2. ADMIN PORTAL (AUTHENTICATED DASHBOARD - NO PUBLIC HEADER/FOOTER) -->
+  <!-- 2. ADMIN PORTAL (AUTHENTICATED - NO PUBLIC HEADER/FOOTER, MATCHING FRONTEND TONE) -->
   <!-- ========================================================================= -->
-  <div id="admin-dashboard-container" class="hidden min-h-screen flex flex-col bg-slate-950">
+  <div id="admin-dashboard-container" class="hidden min-h-screen flex flex-col bg-[#F8F8F7]">
     
-    <!-- Admin Master Top Bar -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-40 px-4 sm:px-6 lg:px-8 py-3.5">
+    <!-- Top Administrative Status Ribbon -->
+    <div class="bg-[#0A160F] text-emerald-400 border-b border-emerald-950/80 py-2 px-4 sm:px-8 select-none font-mono text-[11px] relative shadow-inner z-40">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-stone-400 font-sans uppercase tracking-wider text-[10px] font-semibold">PORT OF CHENNAI:</span>
+          <strong class="text-white">LABORATORY CONSOLE ACTIVE · INCOTERMS 2020 EXPORT</strong>
+        </div>
+        <div class="hidden sm:flex items-center gap-3 text-stone-400 text-[10px]">
+          <span>⚡ DATABASE ENGINE:</span>
+          <strong id="top-engine-badge" class="text-emerald-300">POSTGRESQL (ACTIVE)</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Master Top Bar (Clean Ivory & Heritage Forest) -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-stone-200 sticky top-0 z-40 px-4 sm:px-6 lg:px-8 py-3.5 shadow-xs">
       <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        
         <!-- Brand & Context -->
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-[#082B18] border border-emerald-500/40 p-1.5 flex items-center justify-center flex-shrink-0 shadow-md">
+          <div class="w-10 h-10 rounded-xl bg-[#0D4225] border border-emerald-600/30 p-1.5 flex items-center justify-center flex-shrink-0 shadow-sm">
             <img src="logo.png" alt="Emblem" class="w-full h-full object-contain" />
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <span class="font-serif font-bold text-base text-white tracking-wide">Clipeus Virtutis<sup class="text-amber-400 text-[10px] ml-0.5">®</sup></span>
-              <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-medium hidden sm:inline-block">ADMIN</span>
+              <span class="font-serif font-bold text-lg text-stone-900 tracking-tight">Clipeus Virtutis<sup class="text-amber-600 text-[10px] ml-0.5">®</sup></span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-mono font-bold hidden sm:inline-block">ADMIN</span>
             </div>
-            <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <div class="flex items-center gap-2 text-[11px] font-mono text-stone-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
               <span id="db-indicator-badge">PostgreSQL Engine Active</span>
             </div>
           </div>
@@ -148,17 +190,18 @@
 
         <!-- Quick Nav & User Profile -->
         <div class="flex items-center gap-3">
-          <a href="index.html" target="_blank" class="hidden md:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono transition-colors">
-            <span>Live Portal</span>
-            <span class="text-emerald-400">↗</span>
+          <a href="index.html" target="_blank" class="hidden md:inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-700 text-xs font-mono transition-colors">
+            <span>View Public Portal</span>
+            <span class="text-emerald-800">↗</span>
           </a>
 
-          <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-mono text-slate-300">
-            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-            <span id="admin-user-display" class="font-bold text-white">Lab</span>
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-stone-100 border border-stone-200 text-xs font-mono text-stone-700">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+            <span class="text-stone-500">User:</span>
+            <strong id="admin-user-display" class="text-stone-900">Lab</strong>
           </div>
 
-          <button onclick="handleAdminLogout()" class="px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-400 text-xs font-mono font-medium transition-colors flex items-center gap-1.5 cursor-pointer" title="Sign out">
+          <button onclick="handleAdminLogout()" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-700 text-xs font-mono font-medium transition-colors flex items-center gap-1.5 cursor-pointer" title="Sign out">
             <span>Logout</span>
             <span>✕</span>
           </button>
@@ -166,24 +209,24 @@
       </div>
     </header>
 
-    <!-- Navigation Tab Dock -->
-    <div class="bg-slate-900/60 border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-2">
+    <!-- Navigation Tab Dock in Frontend Tone -->
+    <div class="bg-[#F8F8F7] border-b border-stone-200 px-4 sm:px-6 lg:px-8 py-3">
       <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar">
-        <button onclick="switchTab('dashboard')" id="tab-btn-dashboard" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all flex items-center gap-2 bg-emerald-500 text-white shadow-sm">
+        <button onclick="switchTab('dashboard')" id="tab-btn-dashboard" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all flex items-center gap-2 bg-[#0D4225] text-white shadow-sm">
           <span>📊</span>
           <span>Executive Dashboard</span>
         </button>
-        <button onclick="switchTab('enquiries')" id="tab-btn-enquiries" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2">
+        <button onclick="switchTab('enquiries')" id="tab-btn-enquiries" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium bg-white hover:bg-stone-100 text-stone-700 border border-stone-200/90 transition-all flex items-center gap-2 shadow-xs">
           <span>📋</span>
           <span>Inquiries &amp; RFQs</span>
-          <span id="badge-total-enquiries" class="px-1.5 py-0.2 rounded-full bg-slate-800 text-slate-300 text-[10px]">0</span>
+          <span id="badge-total-enquiries" class="px-1.5 py-0.2 rounded-full bg-stone-100 text-stone-700 text-[10px] font-bold border border-stone-200">0</span>
         </button>
-        <button onclick="switchTab('products')" id="tab-btn-products" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2">
+        <button onclick="switchTab('products')" id="tab-btn-products" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium bg-white hover:bg-stone-100 text-stone-700 border border-stone-200/90 transition-all flex items-center gap-2 shadow-xs">
           <span>📦</span>
           <span>Product Inventory &amp; Add New</span>
-          <span id="badge-total-products" class="px-1.5 py-0.2 rounded-full bg-slate-800 text-slate-300 text-[10px]">0</span>
+          <span id="badge-total-products" class="px-1.5 py-0.2 rounded-full bg-stone-100 text-stone-700 text-[10px] font-bold border border-stone-200">0</span>
         </button>
-        <button onclick="switchTab('database')" id="tab-btn-database" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2">
+        <button onclick="switchTab('database')" id="tab-btn-database" class="admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium bg-white hover:bg-stone-100 text-stone-700 border border-stone-200/90 transition-all flex items-center gap-2 shadow-xs">
           <span>🗄️</span>
           <span>PostgreSQL Configuration</span>
         </button>
@@ -201,93 +244,96 @@
         <!-- Header Title Row -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white">Commercial Enquiry Intelligence</h2>
-            <p class="text-xs sm:text-sm text-slate-400 mt-1">Real-time B2B Trade Gateway metrics across global export corridors</p>
+            <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-mono uppercase tracking-widest font-semibold mb-1">
+              [ REAL-TIME TRADE ANALYTICS ]
+            </div>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Commercial Enquiry Intelligence</h2>
+            <p class="text-xs sm:text-sm text-stone-600 mt-1">Real-time B2B Trade Gateway metrics across global export corridors</p>
           </div>
-          <button onclick="loadDashboardData()" class="self-start sm:self-auto px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer">
+          <button onclick="loadDashboardData()" class="self-start sm:self-auto px-4 py-2 rounded-xl bg-white hover:bg-stone-100 border border-stone-300 text-stone-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer shadow-xs">
             <span id="refresh-icon">🔄</span>
             <span>Refresh Analytics</span>
           </button>
         </div>
 
-        <!-- 4 KPI Metrics Cards: DAY, WEEK, MONTH, YEARLY -->
+        <!-- 4 KPI Metrics Cards: DAY, WEEK, MONTH, YEARLY in Frontend Tone -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           
           <!-- DAY / TODAY -->
-          <div class="bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-5 shadow-lg relative overflow-hidden transition-all group">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
-              <span class="uppercase tracking-wider">Today's Inquiries</span>
-              <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold">DAY</span>
+          <div class="bg-white border border-stone-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+            <div class="flex items-center justify-between text-xs font-mono text-stone-500 mb-2">
+              <span class="uppercase tracking-wider font-semibold">Today's Inquiries</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold">DAY</span>
             </div>
             <div class="flex items-baseline gap-2">
-              <span id="metric-day" class="text-4xl font-bold font-mono text-white">0</span>
-              <span class="text-xs text-emerald-400 font-mono font-medium">New RFQs</span>
+              <span id="metric-day" class="text-4xl font-serif font-bold text-stone-900">0</span>
+              <span class="text-xs text-emerald-800 font-mono font-medium">New RFQs</span>
             </div>
-            <p class="text-[11px] text-slate-500 mt-2 font-mono">Dispatched through gateway today</p>
-            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-emerald-400 opacity-60"></div>
+            <p class="text-[11px] text-stone-500 mt-2 font-mono">Dispatched through gateway today</p>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D4225] to-emerald-500"></div>
           </div>
 
           <!-- WEEK -->
-          <div class="bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-5 shadow-lg relative overflow-hidden transition-all group">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
-              <span class="uppercase tracking-wider">This Week</span>
-              <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-bold">WEEK</span>
+          <div class="bg-white border border-stone-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+            <div class="flex items-center justify-between text-xs font-mono text-stone-500 mb-2">
+              <span class="uppercase tracking-wider font-semibold">This Week</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-bold">WEEK</span>
             </div>
             <div class="flex items-baseline gap-2">
-              <span id="metric-week" class="text-4xl font-bold font-mono text-white">0</span>
-              <span class="text-xs text-blue-400 font-mono font-medium">Last 7 Days</span>
+              <span id="metric-week" class="text-4xl font-serif font-bold text-stone-900">0</span>
+              <span class="text-xs text-blue-800 font-mono font-medium">Last 7 Days</span>
             </div>
-            <p class="text-[11px] text-slate-500 mt-2 font-mono">Rotterdam · Jebel Ali · Singapore</p>
-            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-60"></div>
+            <p class="text-[11px] text-stone-500 mt-2 font-mono">Rotterdam · Jebel Ali · Singapore</p>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-teal-500"></div>
           </div>
 
           <!-- MONTH -->
-          <div class="bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-5 shadow-lg relative overflow-hidden transition-all group">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
-              <span class="uppercase tracking-wider">This Month</span>
-              <span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 text-[10px] font-bold">MONTH</span>
+          <div class="bg-white border border-stone-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+            <div class="flex items-center justify-between text-xs font-mono text-stone-500 mb-2">
+              <span class="uppercase tracking-wider font-semibold">This Month</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold">MONTH</span>
             </div>
             <div class="flex items-baseline gap-2">
-              <span id="metric-month" class="text-4xl font-bold font-mono text-white">0</span>
-              <span class="text-xs text-amber-400 font-mono font-medium">Active Docket</span>
+              <span id="metric-month" class="text-4xl font-serif font-bold text-stone-900">0</span>
+              <span class="text-xs text-amber-800 font-mono font-medium">Active Docket</span>
             </div>
-            <p class="text-[11px] text-slate-500 mt-2 font-mono">Current calendar month volume</p>
-            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-amber-400 opacity-60"></div>
+            <p class="text-[11px] text-stone-500 mt-2 font-mono">Current calendar month volume</p>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600 to-amber-400"></div>
           </div>
 
           <!-- YEARLY -->
-          <div class="bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-5 shadow-lg relative overflow-hidden transition-all group">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
-              <span class="uppercase tracking-wider">Yearly Total</span>
-              <span class="px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 text-[10px] font-bold">YEARLY</span>
+          <div class="bg-white border border-stone-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+            <div class="flex items-center justify-between text-xs font-mono text-stone-500 mb-2">
+              <span class="uppercase tracking-wider font-semibold">Yearly Total</span>
+              <span class="px-2 py-0.5 rounded-full bg-[#0D4225]/10 text-[#0D4225] border border-[#0D4225]/20 text-[10px] font-bold">YEARLY</span>
             </div>
             <div class="flex items-baseline gap-2">
-              <span id="metric-yearly" class="text-4xl font-bold font-mono text-white">0</span>
-              <span class="text-xs text-purple-400 font-mono font-medium">Cumulative</span>
+              <span id="metric-yearly" class="text-4xl font-serif font-bold text-stone-900">0</span>
+              <span class="text-xs text-[#0D4225] font-mono font-medium">Cumulative</span>
             </div>
-            <p class="text-[11px] text-slate-500 mt-2 font-mono">Total 2026 Commercial RFQs</p>
-            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 opacity-60"></div>
+            <p class="text-[11px] text-stone-500 mt-2 font-mono">Total 2026 Commercial RFQs</p>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D4225] to-[#976336]"></div>
           </div>
 
         </div>
 
         <!-- LAST 6 MONTHS BREAKDOWN & VISUAL CHART -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+        <div class="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono mb-2 border border-emerald-500/20">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono mb-2 border border-emerald-200">
                 <span>📈</span>
                 <span>Historical Commercial Growth</span>
               </div>
-              <h3 class="font-serif font-bold text-xl text-white">Last Six Months Enquiry Volume Breakdown</h3>
-              <p class="text-xs text-slate-400 mt-1">Inquiry trajectories submitted through the front-end trade dockets</p>
+              <h3 class="font-serif font-bold text-xl text-stone-900">Last Six Months Enquiry Volume Breakdown</h3>
+              <p class="text-xs text-stone-600 mt-1">Inquiry trajectories submitted through the front-end trade dockets</p>
             </div>
-            <div class="text-right text-xs font-mono text-slate-400 hidden sm:block">
-              Total Recorded: <strong id="metric-total-breakdown" class="text-white font-bold">0</strong> Inquiries
+            <div class="text-right text-xs font-mono text-stone-600 hidden sm:block">
+              Total Recorded: <strong id="metric-total-breakdown" class="text-stone-900 font-bold">0</strong> Inquiries
             </div>
           </div>
 
-          <!-- Visual Bar Chart for Last 6 Months -->
+          <!-- Visual Bar Chart for Last 6 Months in Frontend Tone -->
           <div id="six-months-bars" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-4 pt-4">
             <!-- Dynamic Month Bars Rendered Here -->
           </div>
@@ -295,16 +341,16 @@
           <!-- Tabular Summary -->
           <div class="overflow-x-auto pt-2">
             <table class="w-full text-left text-xs font-mono">
-              <thead class="text-slate-400 border-b border-slate-800">
+              <thead class="text-stone-600 bg-stone-50/80 border-b border-stone-200">
                 <tr>
-                  <th class="py-2.5 px-3">Month</th>
-                  <th class="py-2.5 px-3">Inquiries</th>
-                  <th class="py-2.5 px-3">Estimated Cargo Volume</th>
-                  <th class="py-2.5 px-3">Primary Ports</th>
-                  <th class="py-2.5 px-3">Conversion Status</th>
+                  <th class="py-2.5 px-3 font-semibold">Month</th>
+                  <th class="py-2.5 px-3 font-semibold">Inquiries</th>
+                  <th class="py-2.5 px-3 font-semibold">Estimated Cargo Volume</th>
+                  <th class="py-2.5 px-3 font-semibold">Primary Ports</th>
+                  <th class="py-2.5 px-3 font-semibold">Conversion Status</th>
                 </tr>
               </thead>
-              <tbody id="six-months-table-body" class="divide-y divide-slate-800/60 text-slate-300">
+              <tbody id="six-months-table-body" class="divide-y divide-stone-100 text-stone-800">
                 <!-- Dynamically populated -->
               </tbody>
             </table>
@@ -312,29 +358,33 @@
         </div>
 
         <!-- RECENT ENQUIRIES STREAM -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+        <div class="bg-white border border-stone-200/90 rounded-3xl p-6 shadow-sm space-y-4">
           <div class="flex items-center justify-between">
-            <h3 class="font-serif font-bold text-lg text-white">Recent Real-Time Submissions</h3>
-            <button onclick="switchTab('enquiries')" class="text-xs font-mono text-emerald-400 hover:text-emerald-300 hover:underline">
-              View All Inquiries →
+            <div>
+              <h3 class="font-serif font-bold text-lg text-stone-900">Recent Real-Time Submissions</h3>
+              <p class="text-xs text-stone-500 font-mono mt-0.5">Live incoming RFQ packets from website visitors</p>
+            </div>
+            <button onclick="switchTab('enquiries')" class="text-xs font-mono text-[#0D4225] font-semibold hover:underline flex items-center gap-1">
+              <span>View All Inquiries</span>
+              <span>→</span>
             </button>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs font-mono">
-              <thead class="text-slate-400 border-b border-slate-800">
+              <thead class="bg-stone-50 text-stone-600 border-b border-stone-200">
                 <tr>
-                  <th class="py-3 px-3">Ref ID</th>
-                  <th class="py-3 px-3">Time</th>
-                  <th class="py-3 px-3">Company</th>
-                  <th class="py-3 px-3">Product(s)</th>
-                  <th class="py-3 px-3">Volume</th>
-                  <th class="py-3 px-3">Discharge Port</th>
-                  <th class="py-3 px-3">Status</th>
+                  <th class="py-3 px-3 font-semibold">Ref ID</th>
+                  <th class="py-3 px-3 font-semibold">Date</th>
+                  <th class="py-3 px-3 font-semibold">Company</th>
+                  <th class="py-3 px-3 font-semibold">Product(s)</th>
+                  <th class="py-3 px-3 font-semibold">Volume</th>
+                  <th class="py-3 px-3 font-semibold">Discharge Port</th>
+                  <th class="py-3 px-3 font-semibold">Status</th>
                 </tr>
               </thead>
-              <tbody id="dashboard-recent-enquiries-body" class="divide-y divide-slate-800/60 text-slate-300">
+              <tbody id="dashboard-recent-enquiries-body" class="divide-y divide-stone-100 text-stone-800">
                 <tr>
-                  <td colspan="7" class="py-6 text-center text-slate-500">Loading incoming enquiries...</td>
+                  <td colspan="7" class="py-6 text-center text-stone-500">Loading incoming enquiries...</td>
                 </tr>
               </tbody>
             </table>
@@ -350,56 +400,59 @@
         
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 class="font-serif text-2xl font-bold text-white">Inquiries &amp; RFQ Dockets</h2>
-            <p class="text-xs text-slate-400 mt-1">Live customer submissions received directly from the front-end trade dockets</p>
+            <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-mono uppercase tracking-widest font-semibold mb-1">
+              [ OFFICIAL TRADE INQUIRIES ]
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-stone-900">Inquiries &amp; RFQ Dockets</h2>
+            <p class="text-xs text-stone-600 mt-1">Live customer submissions received directly from the front-end trade dockets</p>
           </div>
 
           <!-- Export / Print -->
           <div class="flex items-center gap-2">
-            <button onclick="exportEnquiriesCSV()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center gap-1.5 cursor-pointer">
+            <button onclick="exportEnquiriesCSV()" class="px-3.5 py-2 rounded-xl bg-white hover:bg-stone-100 border border-stone-300 text-stone-800 text-xs font-mono flex items-center gap-1.5 cursor-pointer shadow-xs">
               <span>📥</span>
               <span>Export CSV</span>
             </button>
           </div>
         </div>
 
-        <!-- Filter & Search Toolbar -->
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        <!-- Filter & Search Toolbar in Frontend Tone -->
+        <div class="bg-white border border-stone-200/90 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 shadow-sm">
           <!-- Period Filter Buttons -->
           <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
-            <button onclick="filterEnquiries('all')" id="filter-btn-all" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-emerald-600 text-white">All</button>
-            <button onclick="filterEnquiries('day')" id="filter-btn-day" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white hover:bg-slate-800">Today</button>
-            <button onclick="filterEnquiries('week')" id="filter-btn-week" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white hover:bg-slate-800">This Week</button>
-            <button onclick="filterEnquiries('month')" id="filter-btn-month" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white hover:bg-slate-800">This Month</button>
-            <button onclick="filterEnquiries('six_months')" id="filter-btn-six_months" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white hover:bg-slate-800">Last 6 Months</button>
-            <button onclick="filterEnquiries('yearly')" id="filter-btn-yearly" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white hover:bg-slate-800">Yearly</button>
+            <button onclick="filterEnquiries('all')" id="filter-btn-all" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#0D4225] text-white shadow-xs">All</button>
+            <button onclick="filterEnquiries('day')" id="filter-btn-day" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors">Today</button>
+            <button onclick="filterEnquiries('week')" id="filter-btn-week" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors">This Week</button>
+            <button onclick="filterEnquiries('month')" id="filter-btn-month" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors">This Month</button>
+            <button onclick="filterEnquiries('six_months')" id="filter-btn-six_months" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors">Last 6 Months</button>
+            <button onclick="filterEnquiries('yearly')" id="filter-btn-yearly" class="enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors">Yearly</button>
           </div>
 
           <!-- Search Input -->
           <div class="relative w-full md:w-80">
-            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500 text-xs">🔍</span>
-            <input type="text" id="enquiries-search" oninput="handleEnquirySearch(event)" placeholder="Search company, product, port, ref..." class="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-xs font-mono focus:outline-none focus:border-emerald-500" />
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-stone-400 text-xs">🔍</span>
+            <input type="text" id="enquiries-search" oninput="handleEnquirySearch(event)" placeholder="Search company, product, port, ref..." class="w-full pl-9 pr-4 py-2 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 text-xs font-mono focus:bg-white focus:outline-none focus:border-[#0D4225]" />
           </div>
         </div>
 
         <!-- Enquiries Data Table -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl">
+        <div class="bg-white border border-stone-200/90 rounded-3xl overflow-hidden shadow-sm">
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs font-mono">
-              <thead class="bg-slate-950/80 text-slate-400 border-b border-slate-800">
+              <thead class="bg-stone-50 text-stone-600 border-b border-stone-200">
                 <tr>
-                  <th class="py-3.5 px-4">Docket Ref</th>
-                  <th class="py-3.5 px-4">Date / Time</th>
-                  <th class="py-3.5 px-4">Company &amp; Contact</th>
-                  <th class="py-3.5 px-4">Product(s)</th>
-                  <th class="py-3.5 px-4">Volume / Terms</th>
-                  <th class="py-3.5 px-4">Port</th>
-                  <th class="py-3.5 px-4">Sample Kit</th>
-                  <th class="py-3.5 px-4">Status</th>
-                  <th class="py-3.5 px-4 text-right">Actions</th>
+                  <th class="py-3.5 px-4 font-semibold">Docket Ref</th>
+                  <th class="py-3.5 px-4 font-semibold">Date / Time</th>
+                  <th class="py-3.5 px-4 font-semibold">Company &amp; Contact</th>
+                  <th class="py-3.5 px-4 font-semibold">Product(s)</th>
+                  <th class="py-3.5 px-4 font-semibold">Volume / Terms</th>
+                  <th class="py-3.5 px-4 font-semibold">Port</th>
+                  <th class="py-3.5 px-4 font-semibold">Sample Kit</th>
+                  <th class="py-3.5 px-4 font-semibold">Status</th>
+                  <th class="py-3.5 px-4 text-right font-semibold">Actions</th>
                 </tr>
               </thead>
-              <tbody id="enquiries-table-body" class="divide-y divide-slate-800/70 text-slate-300">
+              <tbody id="enquiries-table-body" class="divide-y divide-stone-100 text-stone-800">
                 <!-- Dynamically loaded -->
               </tbody>
             </table>
@@ -415,18 +468,21 @@
         
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 class="font-serif text-2xl font-bold text-white">Product Catalog &amp; Technical Formulations</h2>
-            <p class="text-xs text-slate-400 mt-1">Manage sustainable commodities, NABL accreditations, and product images</p>
+            <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-mono uppercase tracking-widest font-semibold mb-1">
+              [ PRODUCT MASTER INVENTORY ]
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-stone-900">Product Catalog &amp; Technical Formulations</h2>
+            <p class="text-xs text-stone-600 mt-1">Manage sustainable commodities, NABL accreditations, and high-res imagery</p>
           </div>
 
           <!-- Add Product CTA -->
-          <button onclick="openAddProductModal()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-mono text-xs font-semibold shadow-lg shadow-emerald-950/40 flex items-center gap-2 cursor-pointer transition-all">
+          <button onclick="openAddProductModal()" class="px-4 py-2.5 rounded-xl bg-[#0D4225] hover:bg-[#082B18] text-white font-mono text-xs font-semibold shadow-sm flex items-center gap-2 cursor-pointer transition-all">
             <span>➕</span>
             <span>Add New Product &amp; Image</span>
           </button>
         </div>
 
-        <!-- Products Grid / Table -->
+        <!-- Products Grid in Frontend Tone -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="products-catalog-grid">
           <!-- Dynamically populated product cards -->
         </div>
@@ -437,38 +493,38 @@
       <!-- TAB 4: DATABASE & POSTGRESQL CONFIGURATION -->
       <!-- ===================================================================== -->
       <section id="tab-database" class="hidden space-y-6">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+        <div class="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono mb-2 border border-emerald-500/20">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono mb-2 border border-emerald-200">
               <span>🐘</span>
               <span>PostgreSQL Production Ready</span>
             </div>
-            <h2 class="font-serif text-2xl font-bold text-white">Database &amp; Infrastructure Configuration</h2>
-            <p class="text-xs text-slate-400 mt-1">Dedicated relational database architecture with zero-latency query execution</p>
+            <h2 class="font-serif text-2xl font-bold text-stone-900">Database &amp; Infrastructure Configuration</h2>
+            <p class="text-xs text-stone-600 mt-1">Dedicated relational database architecture with zero-latency query execution</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             
             <!-- Connection Status Card -->
-            <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
+            <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
               <div class="flex items-center justify-between text-xs font-mono">
-                <span class="text-slate-400">Current Active Engine:</span>
-                <span id="cfg-engine-name" class="font-bold text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30">PostgreSQL / SQLite Adaptive</span>
+                <span class="text-stone-500">Current Active Engine:</span>
+                <span id="cfg-engine-name" class="font-bold text-emerald-800 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">PostgreSQL / SQLite Adaptive</span>
               </div>
-              <div class="text-xs font-mono text-slate-400 space-y-1">
-                <div>Admin User: <strong class="text-white">Lab</strong> (SHA-256 Verified)</div>
-                <div>Tables: <strong class="text-white">admin_users, products, enquiries</strong></div>
-                <div>Indices: <strong class="text-white">Active (created_at, status, slug)</strong></div>
+              <div class="text-xs font-mono text-stone-600 space-y-1.5 pt-1">
+                <div>Admin User: <strong class="text-stone-900">Lab</strong> (SHA-256 Verified)</div>
+                <div>Tables: <strong class="text-stone-900">admin_users, products, enquiries</strong></div>
+                <div>Indices: <strong class="text-stone-900">Active (created_at, status, slug)</strong></div>
               </div>
             </div>
 
             <!-- Connection String Helper -->
-            <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
-              <span class="text-xs font-mono font-bold text-slate-300 block">PostgreSQL Connection Variable</span>
-              <p class="text-[11px] text-slate-400 leading-relaxed font-mono">
-                Set <code class="text-amber-400 bg-slate-900 px-1.5 py-0.5 rounded">DATABASE_URL</code> in your environment or hosting provider (Netlify, Render, Railway, Supabase, Neon) to instantly attach:
+            <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+              <span class="text-xs font-mono font-bold text-stone-800 block">PostgreSQL Connection Variable</span>
+              <p class="text-[11px] text-stone-600 leading-relaxed font-mono">
+                Set <code class="text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">DATABASE_URL</code> in your environment or hosting provider (Netlify, Render, Railway, Supabase, Neon) to instantly attach:
               </p>
-              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] font-mono text-emerald-300 break-all select-all">
+              <div class="p-2.5 rounded-lg bg-white border border-stone-300 text-[11px] font-mono text-[#0D4225] font-semibold break-all select-all">
                 postgresql://postgres:password@localhost:5432/clipeus_virtutis
               </div>
             </div>
@@ -478,10 +534,10 @@
           <!-- Pure SQL Schema Code Block -->
           <div class="space-y-2 pt-2">
             <div class="flex items-center justify-between text-xs font-mono">
-              <span class="text-slate-300 font-bold">SQL Schema Definition (schema.sql)</span>
-              <a href="schema.sql" download class="text-emerald-400 hover:underline">Download schema.sql ↓</a>
+              <span class="text-stone-800 font-bold">SQL Schema Definition (schema.sql)</span>
+              <a href="schema.sql" download class="text-emerald-800 hover:underline font-semibold">Download schema.sql ↓</a>
             </div>
-            <pre class="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300 overflow-x-auto max-h-72 leading-relaxed">
+            <pre class="p-4 rounded-2xl bg-[#0b0e0c] border border-stone-800 text-[11px] font-mono text-emerald-300 overflow-x-auto max-h-72 leading-relaxed">
 -- Clipeus Virtutis® - PostgreSQL Database DDL
 CREATE TABLE IF NOT EXISTS admin_users (
     id SERIAL PRIMARY KEY,
@@ -533,30 +589,36 @@ CREATE TABLE IF NOT EXISTS enquiries (
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 3. MODAL: ADD PRODUCT & IMAGE UPLOAD -->
+  <!-- 3. MODAL: ADD PRODUCT & IMAGE UPLOAD (MATCHING FRONTEND TONE) -->
   <!-- ========================================================================= -->
-  <div id="add-product-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-    <div class="w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+  <div id="add-product-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm">
+    <div class="w-full max-w-2xl bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto text-stone-900">
       
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+      <!-- Top Brand Color Stripe -->
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0D4225] via-amber-500 to-[#0D4225]"></div>
+
+      <div class="flex items-center justify-between pb-4 border-b border-stone-200 mb-6 pt-1">
         <div>
-          <h3 class="font-serif font-bold text-xl text-white">Add New Sustainable Product</h3>
-          <p class="text-xs text-slate-400 font-mono mt-0.5">Upload product details, NABL specifications, and high-res imagery</p>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-mono uppercase tracking-widest font-semibold mb-1">
+            [ CATALOG INVENTORY SPECIFICATION ]
+          </div>
+          <h3 class="font-serif font-bold text-xl text-stone-900">Add New Sustainable Product</h3>
+          <p class="text-xs text-stone-500 font-mono mt-0.5">Upload product details, NABL specifications, and high-res imagery</p>
         </div>
-        <button onclick="closeAddProductModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center text-sm font-mono cursor-pointer">✕</button>
+        <button onclick="closeAddProductModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center text-sm font-mono cursor-pointer transition-colors">✕</button>
       </div>
 
       <form id="add-product-form" onsubmit="handleCreateProduct(event)" class="space-y-4 text-xs font-mono">
         
         <div>
-          <label class="block text-slate-300 uppercase mb-1">Product Title / Name *</label>
-          <input type="text" id="prod-title" required placeholder="e.g. Compressed Bio-Pozzolan Paving Slabs" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 font-sans" />
+          <label class="block text-stone-700 font-semibold uppercase mb-1">Product Title / Name *</label>
+          <input type="text" id="prod-title" required placeholder="e.g. Compressed Bio-Pozzolan Paving Slabs" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#0D4225] font-sans" />
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-slate-300 uppercase mb-1">Sector Category *</label>
-            <select id="prod-category" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-emerald-500">
+            <label class="block text-stone-700 font-semibold uppercase mb-1">Sector Category *</label>
+            <select id="prod-category" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 focus:bg-white focus:outline-none focus:border-[#0D4225]">
               <option value="Agro & Soil Science">Agro &amp; Soil Science</option>
               <option value="Sustainable Construction">Sustainable Construction</option>
               <option value="Industrial Materials">Industrial Materials</option>
@@ -565,54 +627,54 @@ CREATE TABLE IF NOT EXISTS enquiries (
             </select>
           </div>
           <div>
-            <label class="block text-slate-300 uppercase mb-1">SKU / Docket Code *</label>
-            <input type="text" id="prod-sku" required placeholder="e.g. CV-MAT-SLB-08" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500" />
+            <label class="block text-stone-700 font-semibold uppercase mb-1">SKU / Docket Code *</label>
+            <input type="text" id="prod-sku" required placeholder="e.g. CV-MAT-SLB-08" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#0D4225]" />
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-slate-300 uppercase mb-1">Minimum Order Volume (MOQ)</label>
-            <input type="text" id="prod-moq" placeholder="e.g. 5 Metric Tons / 1x 20ft FCL" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500" />
+            <label class="block text-stone-700 font-semibold uppercase mb-1">Minimum Order Volume (MOQ)</label>
+            <input type="text" id="prod-moq" placeholder="e.g. 5 Metric Tons / 1x 20ft FCL" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#0D4225]" />
           </div>
           <div>
-            <label class="block text-slate-300 uppercase mb-1">Export Incoterms 2020</label>
-            <input type="text" id="prod-incoterms" value="CIF / FOB (Port of Chennai)" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-emerald-500" />
+            <label class="block text-stone-700 font-semibold uppercase mb-1">Export Incoterms 2020</label>
+            <input type="text" id="prod-incoterms" value="CIF / FOB (Port of Chennai)" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 focus:bg-white focus:outline-none focus:border-[#0D4225]" />
           </div>
         </div>
 
         <div>
-          <label class="block text-slate-300 uppercase mb-1">Accreditation / Lab Testing Standard</label>
-          <input type="text" id="prod-accreditation" value="NABL ISO/IEC 17025 Accredited · ASTM C62" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-emerald-500" />
+          <label class="block text-stone-700 font-semibold uppercase mb-1">Accreditation / Lab Testing Standard</label>
+          <input type="text" id="prod-accreditation" value="NABL ISO/IEC 17025 Accredited · ASTM C62" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 focus:bg-white focus:outline-none focus:border-[#0D4225]" />
         </div>
 
         <div>
-          <label class="block text-slate-300 uppercase mb-1">Commercial Description</label>
-          <textarea id="prod-description" rows="2" placeholder="Technical utility, sustainability metrics, commercial benefits..." class="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 font-sans"></textarea>
+          <label class="block text-stone-700 font-semibold uppercase mb-1">Commercial Description</label>
+          <textarea id="prod-description" rows="2" placeholder="Technical utility, sustainability metrics, commercial benefits..." class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#0D4225] font-sans"></textarea>
         </div>
 
-        <!-- Product Image Upload Section -->
-        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
-          <label class="block text-slate-300 uppercase">Product Image (Upload or URL)</label>
+        <!-- Product Image Upload Section in Frontend Tone -->
+        <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+          <label class="block text-stone-700 font-semibold uppercase">Product Image (Upload or Specify Asset)</label>
           
           <div class="flex flex-col sm:flex-row items-center gap-4">
             <!-- Preview Box -->
-            <div id="image-preview-container" class="w-24 h-24 rounded-xl border border-slate-800 bg-slate-900 overflow-hidden flex items-center justify-center flex-shrink-0">
-              <img id="image-preview" src="logo.png" alt="Preview" class="w-full h-full object-cover" />
+            <div id="image-preview-container" class="w-24 h-24 rounded-xl border border-stone-300 bg-white overflow-hidden flex items-center justify-center flex-shrink-0 shadow-xs">
+              <img id="image-preview" src="logo.png" alt="Preview" class="w-full h-full object-contain p-1" />
             </div>
 
             <!-- Upload File Input -->
             <div class="flex-1 w-full space-y-2">
-              <input type="file" id="prod-image-file" accept="image/*" onchange="previewImageFile(event)" class="w-full text-slate-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-mono file:bg-emerald-600 file:text-white hover:file:bg-emerald-500 cursor-pointer" />
-              <div class="text-[10px] text-slate-500">Or specify existing asset path:</div>
-              <input type="text" id="prod-image-url" placeholder="assets/products/biobrick.jpg" oninput="previewImageFromUrl(event)" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-600 text-xs" />
+              <input type="file" id="prod-image-file" accept="image/*" onchange="previewImageFile(event)" class="w-full text-stone-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-mono file:bg-[#0D4225] file:text-white hover:file:bg-[#082B18] cursor-pointer" />
+              <div class="text-[10px] text-stone-500 font-mono">Or specify existing asset path:</div>
+              <input type="text" id="prod-image-url" placeholder="assets/products/biobrick.png" oninput="previewImageFromUrl(event)" class="w-full p-2 rounded-lg bg-white border border-stone-300 text-stone-900 placeholder-stone-400 text-xs font-mono" />
             </div>
           </div>
         </div>
 
-        <div class="pt-4 flex items-center justify-end gap-3 border-t border-slate-800">
-          <button type="button" onclick="closeAddProductModal()" class="px-4 py-2.5 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 cursor-pointer">Cancel</button>
-          <button type="submit" id="prod-submit-btn" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-lg shadow-emerald-950/50 cursor-pointer flex items-center gap-2">
+        <div class="pt-4 flex items-center justify-end gap-3 border-t border-stone-200">
+          <button type="button" onclick="closeAddProductModal()" class="px-4 py-2.5 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-100 cursor-pointer font-mono text-xs transition-colors">Cancel</button>
+          <button type="submit" id="prod-submit-btn" class="px-5 py-2.5 rounded-xl bg-[#0D4225] hover:bg-[#082B18] text-white font-bold shadow-md shadow-[#0D4225]/20 cursor-pointer flex items-center gap-2 font-mono text-xs transition-all">
             <span>Save Product to Database</span>
             <span>✓</span>
           </button>
@@ -623,29 +685,32 @@ CREATE TABLE IF NOT EXISTS enquiries (
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 4. MODAL: ENQUIRY DOSSIER DETAILS & PRINT VIEW -->
+  <!-- 4. MODAL: ENQUIRY DOSSIER DETAILS & PRINT VIEW (MATCHING FRONTEND TONE) -->
   <!-- ========================================================================= -->
-  <div id="enquiry-dossier-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-    <div class="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto font-mono text-xs">
+  <div id="enquiry-dossier-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm">
+    <div class="w-full max-w-xl bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto font-mono text-xs text-stone-900">
       
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-5">
+      <!-- Top Brand Color Stripe -->
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0D4225] via-amber-500 to-[#0D4225]"></div>
+
+      <div class="flex items-center justify-between pb-4 border-b border-stone-200 mb-5 pt-1">
         <div>
-          <span class="text-[10px] text-emerald-400 uppercase tracking-widest block font-bold">OFFICIAL COMMERCIAL RFQ DOSSIER</span>
-          <h3 id="dossier-ref" class="font-serif font-bold text-xl text-white mt-0.5">CV-RFQ-2026-0000</h3>
+          <span class="text-[10px] text-emerald-800 uppercase tracking-widest block font-bold font-mono">OFFICIAL COMMERCIAL RFQ DOSSIER</span>
+          <h3 id="dossier-ref" class="font-serif font-bold text-xl text-stone-900 mt-0.5">CV-RFQ-2026-0000</h3>
         </div>
-        <button onclick="closeEnquiryDossierModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center text-sm cursor-pointer">✕</button>
+        <button onclick="closeEnquiryDossierModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center text-sm cursor-pointer transition-colors">✕</button>
       </div>
 
       <div id="dossier-content" class="space-y-4">
         <!-- Dynamically injected -->
       </div>
 
-      <div class="pt-5 mt-6 border-t border-slate-800 flex items-center justify-between">
-        <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white flex items-center gap-2 cursor-pointer">
+      <div class="pt-5 mt-6 border-t border-stone-200 flex items-center justify-between">
+        <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-stone-800 flex items-center gap-2 cursor-pointer font-mono text-xs transition-colors">
           <span>🖨️</span>
           <span>Print Formal RFQ Receipt</span>
         </button>
-        <button onclick="closeEnquiryDossierModal()" class="px-4 py-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-500 font-bold cursor-pointer">
+        <button onclick="closeEnquiryDossierModal()" class="px-4 py-2 rounded-xl bg-[#0D4225] text-white hover:bg-[#082B18] font-bold cursor-pointer font-mono text-xs transition-colors shadow-xs">
           Done
         </button>
       </div>
@@ -773,7 +838,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
         }
       } finally {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Authorize &amp; Access Console</span><span>→</span>';
+        submitBtn.innerHTML = '<span>Authorize &amp; Access Admin Console</span><span>→</span>';
       }
     }
 
@@ -795,7 +860,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
       showLoginScreen();
     }
 
-    // Tab Switching
+    // Tab Switching in Frontend Tone
     function switchTab(tabId) {
       const tabs = ['dashboard', 'enquiries', 'products', 'database'];
       tabs.forEach(t => {
@@ -803,10 +868,10 @@ CREATE TABLE IF NOT EXISTS enquiries (
         const btn = document.getElementById(`tab-btn-${t}`);
         if (t === tabId) {
           el.classList.remove('hidden');
-          btn.className = 'admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all flex items-center gap-2 bg-emerald-500 text-white shadow-sm';
+          btn.className = 'admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all flex items-center gap-2 bg-[#0D4225] text-white shadow-sm';
         } else {
           el.classList.add('hidden');
-          btn.className = 'admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2';
+          btn.className = 'admin-nav-tab px-4 py-2 rounded-xl text-xs font-mono font-medium bg-white hover:bg-stone-100 text-stone-700 border border-stone-200/90 transition-all flex items-center gap-2 shadow-xs';
         }
       });
 
@@ -833,6 +898,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
 
           if (data.database_engine === 'postgresql') {
             document.getElementById('db-indicator-badge').textContent = 'PostgreSQL Engine Connected';
+            document.getElementById('top-engine-badge').textContent = 'POSTGRESQL (CONNECTED)';
             document.getElementById('cfg-engine-name').textContent = 'PostgreSQL (psycopg2 / pg8000)';
           }
 
@@ -849,7 +915,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
       loadRecentEnquiriesForDashboard();
     }
 
-    // Render 6 Months Trend
+    // Render 6 Months Trend in Frontend Tone
     function renderSixMonthsTrend(months) {
       const container = document.getElementById('six-months-bars');
       const tableBody = document.getElementById('six-months-table-body');
@@ -859,7 +925,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
       tableBody.innerHTML = '';
 
       if (!months || !months.length) {
-        container.innerHTML = '<div class="col-span-6 text-center text-slate-500 py-4">No historical records found.</div>';
+        container.innerHTML = '<div class="col-span-6 text-center text-stone-500 py-4">No historical records found.</div>';
         return;
       }
 
@@ -871,16 +937,16 @@ CREATE TABLE IF NOT EXISTS enquiries (
 
         // Visual Bar Card
         const barCard = document.createElement('div');
-        barCard.className = `p-3 rounded-2xl border ${isCurrent ? 'bg-slate-900 border-emerald-500/50 shadow-emerald-950/40 shadow-lg' : 'bg-slate-950/70 border-slate-800'} flex flex-col justify-between h-40`;
+        barCard.className = `p-3.5 rounded-2xl border transition-all ${isCurrent ? 'bg-emerald-50/70 border-emerald-300 shadow-sm' : 'bg-stone-50 border-stone-200'} flex flex-col justify-between h-44`;
         barCard.innerHTML = `
           <div class="flex items-center justify-between text-[11px] font-mono">
-            <span class="${isCurrent ? 'text-emerald-400 font-bold' : 'text-slate-400'}">${m.label}</span>
-            <span class="font-bold text-white">${m.count}</span>
+            <span class="${isCurrent ? 'text-emerald-900 font-bold' : 'text-stone-600 font-semibold'}">${m.label}</span>
+            <span class="font-bold text-stone-900">${m.count}</span>
           </div>
-          <div class="w-full bg-slate-800 h-24 rounded-xl flex items-end p-1 overflow-hidden">
-            <div style="height: ${Math.max(pct, 12)}%;" class="w-full ${isCurrent ? 'bg-gradient-to-t from-emerald-600 to-amber-400' : 'bg-gradient-to-t from-slate-700 to-emerald-500/70'} rounded-lg transition-all duration-700"></div>
+          <div class="w-full bg-stone-200/70 h-24 rounded-xl flex items-end p-1 overflow-hidden">
+            <div style="height: ${Math.max(pct, 14)}%;" class="w-full ${isCurrent ? 'bg-gradient-to-t from-[#0D4225] to-emerald-500' : 'bg-gradient-to-t from-stone-400 to-[#0D4225]/70'} rounded-lg transition-all duration-700 shadow-xs"></div>
           </div>
-          <div class="text-center text-[10px] font-mono text-slate-500">
+          <div class="text-center text-[10px] font-mono ${isCurrent ? 'text-emerald-800 font-bold' : 'text-stone-500'}">
             ${isCurrent ? 'Current Month' : `${pct}% Volume`}
           </div>
         `;
@@ -889,12 +955,12 @@ CREATE TABLE IF NOT EXISTS enquiries (
         // Table Row
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td class="py-2.5 px-3 font-bold ${isCurrent ? 'text-emerald-400' : 'text-white'}">${m.label}</td>
-          <td class="py-2.5 px-3 font-bold">${m.count} RFQ Dockets</td>
-          <td class="py-2.5 px-3 text-slate-400">${(m.count * 18.5).toFixed(1)} Metric Tons</td>
-          <td class="py-2.5 px-3 text-slate-400">Rotterdam, Jebel Ali, Hamburg</td>
+          <td class="py-2.5 px-3 font-bold ${isCurrent ? 'text-emerald-900' : 'text-stone-900'}">${m.label}</td>
+          <td class="py-2.5 px-3 font-bold text-stone-900">${m.count} RFQ Dockets</td>
+          <td class="py-2.5 px-3 text-stone-600">${(m.count * 18.5).toFixed(1)} Metric Tons</td>
+          <td class="py-2.5 px-3 text-stone-600">Rotterdam, Jebel Ali, Hamburg</td>
           <td class="py-2.5 px-3">
-            <span class="px-2 py-0.5 rounded-full ${isCurrent ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-400'} text-[10px]">
+            <span class="px-2 py-0.5 rounded-full ${isCurrent ? 'bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold' : 'bg-stone-100 text-stone-600 border border-stone-200'} text-[10px]">
               ${isCurrent ? 'Active Dispatch' : '100% Cleared'}
             </span>
           </td>
@@ -913,23 +979,23 @@ CREATE TABLE IF NOT EXISTS enquiries (
 
         if (data && data.enquiries && data.enquiries.length) {
           tbody.innerHTML = data.enquiries.map(enq => `
-            <tr class="hover:bg-slate-800/40 cursor-pointer" onclick="openEnquiryDossier('${enq.reference_no}')">
-              <td class="py-3 px-3 font-bold text-emerald-400">${enq.reference_no}</td>
-              <td class="py-3 px-3 text-slate-400">${enq.created_at.split(' ')[0]}</td>
-              <td class="py-3 px-3 font-medium text-white">${escapeHtml(enq.company_name)}</td>
-              <td class="py-3 px-3 text-slate-300 truncate max-w-[200px]">${escapeHtml(enq.products_requested)}</td>
-              <td class="py-3 px-3">${escapeHtml(enq.volume)} (${enq.incoterm || 'CIF'})</td>
-              <td class="py-3 px-3 text-slate-400">${escapeHtml(enq.destination_port)}</td>
+            <tr class="hover:bg-stone-50 cursor-pointer transition-colors" onclick="openEnquiryDossier('${enq.reference_no}')">
+              <td class="py-3 px-3 font-bold text-[#0D4225]">${enq.reference_no}</td>
+              <td class="py-3 px-3 text-stone-500">${enq.created_at.split(' ')[0]}</td>
+              <td class="py-3 px-3 font-medium text-stone-900 font-serif">${escapeHtml(enq.company_name)}</td>
+              <td class="py-3 px-3 text-stone-700 truncate max-w-[200px]">${escapeHtml(enq.products_requested)}</td>
+              <td class="py-3 px-3 font-mono">${escapeHtml(enq.volume)} (${enq.incoterm || 'CIF'})</td>
+              <td class="py-3 px-3 text-stone-600">${escapeHtml(enq.destination_port)}</td>
               <td class="py-3 px-3">${getStatusBadge(enq.status)}</td>
             </tr>
           `).join('');
         } else {
-          tbody.innerHTML = '<tr><td colspan="7" class="py-6 text-center text-slate-500">No recent inquiries found. Submit one via the front-end to see it appear here!</td></tr>';
+          tbody.innerHTML = '<tr><td colspan="7" class="py-6 text-center text-stone-500">No recent inquiries found. Submit one via the front-end to see it appear here!</td></tr>';
         }
       } catch (e) {}
     }
 
-    // Load Full Enquiries Data
+    // Load Full Enquiries Data in Frontend Tone
     async function loadEnquiriesData(period = currentPeriod, search = '') {
       try {
         const res = await fetch(`/api/admin/enquiries?period=${period}&search=${encodeURIComponent(search)}&token=${encodeURIComponent(authToken || '')}`);
@@ -942,28 +1008,28 @@ CREATE TABLE IF NOT EXISTS enquiries (
           document.getElementById('badge-total-enquiries').textContent = allEnquiries.length;
 
           if (!allEnquiries.length) {
-            tbody.innerHTML = '<tr><td colspan="9" class="py-10 text-center text-slate-500">No inquiries matching current filter.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="9" class="py-10 text-center text-stone-500">No inquiries matching current filter.</td></tr>';
             return;
           }
 
           tbody.innerHTML = allEnquiries.map(enq => `
-            <tr class="hover:bg-slate-800/40 transition-colors">
-              <td class="py-3 px-4 font-bold text-emerald-400 font-mono">${enq.reference_no}</td>
-              <td class="py-3 px-4 text-slate-400 whitespace-nowrap">${enq.created_at}</td>
+            <tr class="hover:bg-stone-50 transition-colors">
+              <td class="py-3 px-4 font-bold text-[#0D4225] font-mono">${enq.reference_no}</td>
+              <td class="py-3 px-4 text-stone-500 whitespace-nowrap">${enq.created_at}</td>
               <td class="py-3 px-4">
-                <div class="font-bold text-white">${escapeHtml(enq.company_name)}</div>
-                <div class="text-[11px] text-slate-400">${escapeHtml(enq.email)} · ${escapeHtml(enq.phone || 'N/A')}</div>
+                <div class="font-bold text-stone-900 font-serif text-sm">${escapeHtml(enq.company_name)}</div>
+                <div class="text-[11px] text-stone-500 font-mono">${escapeHtml(enq.email)} · ${escapeHtml(enq.phone || 'N/A')}</div>
               </td>
-              <td class="py-3 px-4 max-w-xs truncate text-slate-200" title="${escapeHtml(enq.products_requested)}">${escapeHtml(enq.products_requested)}</td>
-              <td class="py-3 px-4 font-mono">${escapeHtml(enq.volume)} <span class="text-amber-400">(${enq.incoterm || 'CIF'})</span></td>
-              <td class="py-3 px-4 text-slate-400">${escapeHtml(enq.destination_port)}</td>
+              <td class="py-3 px-4 max-w-xs truncate text-stone-800 font-sans" title="${escapeHtml(enq.products_requested)}">${escapeHtml(enq.products_requested)}</td>
+              <td class="py-3 px-4 font-mono font-medium">${escapeHtml(enq.volume)} <span class="text-amber-700">(${enq.incoterm || 'CIF'})</span></td>
+              <td class="py-3 px-4 text-stone-600">${escapeHtml(enq.destination_port)}</td>
               <td class="py-3 px-4">
                 ${enq.sample_kit_requested 
-                  ? '<span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">🧪 Sample Kit</span>' 
-                  : '<span class="text-slate-600 text-[10px]">Commercial</span>'}
+                  ? '<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold font-mono">🧪 Sample Kit</span>' 
+                  : '<span class="text-stone-400 text-[10px] font-mono">Commercial</span>'}
               </td>
               <td class="py-3 px-4">
-                <select onchange="updateEnquiryStatus('${enq.reference_no}', this.value)" class="bg-slate-950 border border-slate-800 text-xs rounded-lg px-2 py-1 text-slate-300 focus:outline-none focus:border-emerald-500 font-mono cursor-pointer">
+                <select onchange="updateEnquiryStatus('${enq.reference_no}', this.value)" class="bg-white border border-stone-300 text-xs rounded-lg px-2 py-1 text-stone-800 focus:outline-none focus:border-[#0D4225] font-mono cursor-pointer shadow-2xs">
                   <option value="New" ${enq.status === 'New' ? 'selected' : ''}>New</option>
                   <option value="In Review" ${enq.status === 'In Review' ? 'selected' : ''}>In Review</option>
                   <option value="Quoted" ${enq.status === 'Quoted' ? 'selected' : ''}>Quoted</option>
@@ -972,7 +1038,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
                 </select>
               </td>
               <td class="py-3 px-4 text-right">
-                <button onclick="openEnquiryDossier('${enq.reference_no}')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors text-xs font-mono cursor-pointer" title="View Full Docket">
+                <button onclick="openEnquiryDossier('${enq.reference_no}')" class="px-3 py-1 rounded-lg bg-stone-100 hover:bg-[#0D4225] hover:text-white border border-stone-300 text-stone-800 transition-colors text-xs font-mono cursor-pointer shadow-2xs" title="View Full Docket">
                   Dossier
                 </button>
               </td>
@@ -990,9 +1056,9 @@ CREATE TABLE IF NOT EXISTS enquiries (
       btns.forEach(b => {
         const btn = document.getElementById(`filter-btn-${b}`);
         if (b === period) {
-          btn.className = 'enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-emerald-600 text-white';
+          btn.className = 'enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#0D4225] text-white shadow-xs';
         } else {
-          btn.className = 'enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white hover:bg-slate-800';
+          btn.className = 'enquiry-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors';
         }
       });
       loadEnquiriesData(period, document.getElementById('enquiries-search').value.trim());
@@ -1021,61 +1087,61 @@ CREATE TABLE IF NOT EXISTS enquiries (
       } catch (e) {}
     }
 
-    // Open Enquiry Dossier Modal
+    // Open Enquiry Dossier Modal in Frontend Tone
     function openEnquiryDossier(ref) {
       const enq = allEnquiries.find(e => e.reference_no === ref);
       if (!enq) return;
 
       document.getElementById('dossier-ref').textContent = enq.reference_no;
       document.getElementById('dossier-content').innerHTML = `
-        <div class="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-slate-950 border border-slate-800">
+        <div class="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200">
           <div>
-            <span class="text-slate-500 block text-[10px]">COMPANY / INSTITUTION</span>
-            <strong class="text-white text-sm font-sans">${escapeHtml(enq.company_name)}</strong>
+            <span class="text-stone-500 block text-[10px] font-mono uppercase">COMPANY / INSTITUTION</span>
+            <strong class="text-stone-900 text-sm font-serif">${escapeHtml(enq.company_name)}</strong>
           </div>
           <div>
-            <span class="text-slate-500 block text-[10px]">DATE RECEIVED</span>
-            <span class="text-slate-300">${enq.created_at}</span>
+            <span class="text-stone-500 block text-[10px] font-mono uppercase">DATE RECEIVED</span>
+            <span class="text-stone-800 font-mono">${enq.created_at}</span>
           </div>
           <div>
-            <span class="text-slate-500 block text-[10px]">CORPORATE EMAIL</span>
-            <a href="mailto:${escapeHtml(enq.email)}" class="text-emerald-400 hover:underline">${escapeHtml(enq.email)}</a>
+            <span class="text-stone-500 block text-[10px] font-mono uppercase">CORPORATE EMAIL</span>
+            <a href="mailto:${escapeHtml(enq.email)}" class="text-emerald-800 font-semibold hover:underline">${escapeHtml(enq.email)}</a>
           </div>
           <div>
-            <span class="text-slate-500 block text-[10px]">PHONE / WHATSAPP</span>
-            <span class="text-slate-300">${escapeHtml(enq.phone || 'N/A')}</span>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
-          <span class="text-slate-500 block text-[10px]">PRODUCTS REQUESTED</span>
-          <div class="text-white font-medium text-sm font-sans">${escapeHtml(enq.products_requested)}</div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-950 border border-slate-800">
-          <div>
-            <span class="text-slate-500 block text-[10px]">ESTIMATED VOLUME</span>
-            <strong class="text-white">${escapeHtml(enq.volume)}</strong>
-          </div>
-          <div>
-            <span class="text-slate-500 block text-[10px]">INCOTERMS 2020</span>
-            <strong class="text-amber-400">${enq.incoterm || 'CIF'}</strong>
-          </div>
-          <div>
-            <span class="text-slate-500 block text-[10px]">DISCHARGE PORT</span>
-            <strong class="text-white">${escapeHtml(enq.destination_port)}</strong>
+            <span class="text-stone-500 block text-[10px] font-mono uppercase">PHONE / WHATSAPP</span>
+            <span class="text-stone-800 font-mono">${escapeHtml(enq.phone || 'N/A')}</span>
           </div>
         </div>
 
-        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-          <span>Physical Laboratory Sample Kit:</span>
+        <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5">
+          <span class="text-stone-500 block text-[10px] font-mono uppercase">PRODUCTS REQUESTED</span>
+          <div class="text-stone-900 font-medium text-sm font-sans">${escapeHtml(enq.products_requested)}</div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200">
+          <div>
+            <span class="text-stone-500 block text-[10px] font-mono uppercase">ESTIMATED VOLUME</span>
+            <strong class="text-stone-900 font-mono">${escapeHtml(enq.volume)}</strong>
+          </div>
+          <div>
+            <span class="text-stone-500 block text-[10px] font-mono uppercase">INCOTERMS 2020</span>
+            <strong class="text-amber-700 font-mono">${enq.incoterm || 'CIF'}</strong>
+          </div>
+          <div>
+            <span class="text-stone-500 block text-[10px] font-mono uppercase">DISCHARGE PORT</span>
+            <strong class="text-stone-900 font-mono">${escapeHtml(enq.destination_port)}</strong>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 flex items-center justify-between">
+          <span class="text-stone-700 font-mono">Physical Laboratory Sample Kit:</span>
           <strong>${enq.sample_kit_requested ? '✅ YES (Include NABL Certificate)' : '❌ NO (Commercial Quote Only)'}</strong>
         </div>
 
         ${enq.notes ? `
-        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-1">
-          <span class="text-slate-500 block text-[10px]">ADDITIONAL SPECIFICATIONS / NOTES</span>
-          <p class="text-slate-300 leading-relaxed font-sans">${escapeHtml(enq.notes)}</p>
+        <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1">
+          <span class="text-stone-500 block text-[10px] font-mono uppercase">ADDITIONAL SPECIFICATIONS / NOTES</span>
+          <p class="text-stone-800 leading-relaxed font-sans">${escapeHtml(enq.notes)}</p>
         </div>` : ''}
       `;
 
@@ -1116,7 +1182,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
     }
 
     // =========================================================================
-    // Product Management Functions
+    // Product Management Functions in Frontend Tone
     // =========================================================================
     async function loadProductsData() {
       try {
@@ -1129,29 +1195,29 @@ CREATE TABLE IF NOT EXISTS enquiries (
           document.getElementById('badge-total-products').textContent = data.products.length;
 
           grid.innerHTML = data.products.map(p => `
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between group hover:border-emerald-500/40 transition-all">
+            <div class="bg-white border border-stone-200/90 rounded-3xl overflow-hidden shadow-sm hover:shadow-portfolio-hover hover:border-[#0D4225]/40 transition-all flex flex-col justify-between group">
               <div>
-                <div class="h-44 w-full bg-slate-950 relative overflow-hidden">
+                <div class="h-48 w-full bg-stone-100 relative overflow-hidden flex items-center justify-center">
                   <img src="${p.image_url || 'logo.png'}" alt="${escapeHtml(p.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='logo.png'" />
-                  <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-mono font-bold text-emerald-400 border border-white/10">
+                  <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold text-[#0D4225] border border-stone-200 shadow-xs">
                     ${escapeHtml(p.category)}
                   </span>
                 </div>
                 <div class="p-5 space-y-2">
-                  <div class="flex items-center justify-between text-[11px] font-mono text-slate-500">
-                    <span>${p.sku || 'CV-PROD'}</span>
-                    <span>${p.moq || '1 MT'}</span>
+                  <div class="flex items-center justify-between text-[11px] font-mono text-stone-500">
+                    <span class="font-semibold text-stone-700">${p.sku || 'CV-PROD'}</span>
+                    <span>MOQ: ${p.moq || '1 MT'}</span>
                   </div>
-                  <h4 class="font-serif font-bold text-lg text-white leading-snug">${escapeHtml(p.title)}</h4>
-                  <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed font-sans">${escapeHtml(p.description || '')}</p>
-                  <div class="text-[10px] font-mono text-amber-300 pt-1">
+                  <h4 class="font-serif font-bold text-lg text-stone-900 leading-snug group-hover:text-[#0D4225] transition-colors">${escapeHtml(p.title)}</h4>
+                  <p class="text-xs text-stone-600 line-clamp-2 leading-relaxed font-sans">${escapeHtml(p.description || '')}</p>
+                  <div class="text-[10px] font-mono text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 inline-block mt-1">
                     🛡️ ${escapeHtml(p.accreditation || 'NABL ISO 17025')}
                   </div>
                 </div>
               </div>
-              <div class="p-4 border-t border-slate-800 bg-slate-950/50 flex items-center justify-between">
-                <span class="text-[10px] font-mono text-slate-500">Incoterms: ${p.incoterms || 'CIF/FOB'}</span>
-                <button onclick="handleDeleteProduct(${p.id}, '${escapeHtml(p.title)}')" class="px-2.5 py-1 rounded-lg text-rose-400 hover:text-rose-300 hover:bg-rose-500/10 text-xs font-mono transition-colors cursor-pointer" title="Delete Product">
+              <div class="p-4 border-t border-stone-100 bg-stone-50/60 flex items-center justify-between">
+                <span class="text-[10px] font-mono text-stone-500 font-medium">Incoterms: ${p.incoterms || 'CIF/FOB'}</span>
+                <button onclick="handleDeleteProduct(${p.id}, '${escapeHtml(p.title)}')" class="px-2.5 py-1 rounded-lg text-rose-600 hover:text-rose-800 hover:bg-rose-50 border border-transparent hover:border-rose-200 text-xs font-mono transition-colors cursor-pointer" title="Delete Product">
                   🗑️ Delete
                 </button>
               </div>
@@ -1264,21 +1330,21 @@ CREATE TABLE IF NOT EXISTS enquiries (
       }
     }
 
-    // Helper functions
+    // Helper functions in Frontend Tone
     function getStatusBadge(status) {
       switch (status) {
         case 'New':
-          return '<span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">New</span>';
+          return '<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold font-mono">New</span>';
         case 'In Review':
-          return '<span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-bold">In Review</span>';
+          return '<span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-bold font-mono">In Review</span>';
         case 'Quoted':
-          return '<span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-[10px] font-bold">Quoted</span>';
+          return '<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold font-mono">Quoted</span>';
         case 'Sample Dispatched':
-          return '<span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold">Dispatched</span>';
+          return '<span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-800 border border-purple-200 text-[10px] font-bold font-mono">Dispatched</span>';
         case 'Closed':
-          return '<span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-[10px]">Closed</span>';
+          return '<span class="px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-200 text-[10px] font-mono">Closed</span>';
         default:
-          return `<span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 text-[10px]">${escapeHtml(status || 'New')}</span>`;
+          return `<span class="px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 border border-stone-200 text-[10px] font-mono">${escapeHtml(status || 'New')}</span>`;
       }
     }
 
